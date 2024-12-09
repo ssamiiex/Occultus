@@ -1,0 +1,111 @@
+<table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+    <tr>
+        <td valign="top">
+            <table class="boutonmp" border="0" cellspacing="2" cellpadding="0" height="40">
+                <tr valign="middle">
+                    <td>{INBOX_IMG}</td>
+                    <td><span class="gen"><b>{INBOX}</b>&nbsp;&nbsp;</span></td>
+                    <td>{SENTBOX_IMG}</td>
+                    <td><span class="gen"><b>{SENTBOX}</b>&nbsp;&nbsp;</span></td>
+                    <td>{OUTBOX_IMG}</td>
+                    <td><span class="gen"><b>{OUTBOX}</b>&nbsp;&nbsp;</span></td>
+                    <td>{SAVEBOX_IMG}</td>
+                    <td><span class="gen"><b>{SAVEBOX}</b></span></td>
+                </tr>
+            </table>
+        </td>
+        <td>
+            <!-- BEGIN switch_box_size_notice -->
+          <div class="boxmp">
+                       {BOX_SIZE_STATUS}
+          </div>
+            <!-- END switch_box_size_notice -->
+        </td>
+    </tr>
+</table>
+<br clear="all" />
+<script>$(function(){
+ $('a[href*="privmsg?mode=post"] img').replaceWith('Nouveau');
+  });
+  </script>
+<form action="{S_PRIVMSGS_ACTION}" method="post" name="privmsg_list">
+    <table width="98%" border="0" cellspacing="2" cellpadding="0" align="center">
+        <tr>
+          <td valign="middle"><div class="btnmpnew">{POST_PM_IMG}</div></td>
+            <td width="100%"></td>
+            <td align="right" nowrap="nowrap">
+                <span class="gensmall">{L_DISPLAY_MESSAGES}:&nbsp;
+                    <select name="msgdays">
+                        {S_SELECT_MSG_DAYS}
+                    </select>&nbsp;
+                    <input class="liteoption" type="submit" name="submit_msgdays" value="{L_GO}" />
+                </span>
+            </td>
+        </tr>
+    </table>
+      <table class="fondmplist" border="0" cellspacing="1" cellpadding="0">
+        <tr>
+            <div class="d_headermpList"></div>
+        </tr>
+        <!-- BEGIN listrow -->
+        <tr>
+          <div class="d_mpList">
+          <div class="mpicon"><img title="{listrow.L_PRIVMSG_FOLDER_ALT}" src="{listrow.PRIVMSG_FOLDER_IMG}" alt="{listrow.L_PRIVMSG_FOLDER_ALT}" loading="lazy" /></div>
+          <div class="mptitle">
+                  <div><span class="mptopictitle">
+                    &nbsp;
+                    <a class="mptopictitle" href="{listrow.U_READ}">{listrow.MSG_UNANSWERED}{listrow.SUBJECT}</a>
+                </span>
+                    <div class="mpauthor">envoyé de la part de&nbsp;{listrow.FROM}</div>
+            </div>
+          </div>
+        <div class="mpdate">{listrow.DATE}</div>
+        <span class="postdetails"><input type="checkbox" name="mark[]2" value="{listrow.S_MARK_ID}" /></span>
+        <div class="basmp"></div>
+        </div>
+        </tr>
+        <!-- END listrow --><!-- BEGIN switch_no_messages -->
+        <tr>
+            <td class="row1" colspan="6" align="center" valign="middle"><span class="gen">{L_NO_MESSAGES}</span></td>
+        </tr>
+        <!-- END switch_no_messages -->
+        <tr>
+          <div class="basmpList"></div>
+            <td colspan="6" align="right" height="28">
+                {S_HIDDEN_FIELDS}
+                <!-- BEGIN switch_save -->
+                <input class="mainoption" type="submit" name="save" value="{L_SAVE_MARKED}" />&nbsp;&nbsp;
+                <!-- END switch_save -->
+                <!-- BEGIN switch_move_profile -->
+                <input class="mainoption" type="submit" name="moveprofile" value="{L_MOVE_PROFILE_MARKED}" />&nbsp;&nbsp;
+                <!-- END switch_move_profile -->
+                <!-- BEGIN switch_mark_as_read -->
+                <input class="liteoption" type="submit" name="mark_as_read" value="{switch_mark_as_read.L_MARK_AS_READ}" />&nbsp;&nbsp;
+                <input class="liteoption" type="submit" name="mark_as_unread" value="{switch_mark_as_read.L_MARK_AS_UNREAD}" />&nbsp;&nbsp;
+                <!-- END switch_mark_as_read -->
+                <input class="liteoption" type="submit" name="delete" value="{L_DELETE_MARKED}" />&nbsp;&nbsp;
+                <input class="liteoption" type="submit" name="deleteall" value="{L_DELETE_ALL}" />
+            </td>
+        </tr>
+    </table>
+    <table width="98%" border="0" cellspacing="2" cellpadding="0" align="center">
+        <tr>
+          <td valign="top" width="5%"><span class="nav"><div class="btnmpnew">{POST_PM_IMG}</div></span></td>
+            <td valign="middle"><span class="navmp">{PAGE_NUMBER}<br /><br /><br /></span></td>
+            <td align="right" valign="top" nowrap="nowrap">
+                <span class="gensmall">
+                    <b>
+                        <a class="gensmall" href="javascript:select_switch_privmsg(true);">{L_MARK_ALL}</a> <dsp2>†</dsp2> <a class="gensmall" href="javascript:select_switch_privmsg(false);">{L_UNMARK_ALL}</a>
+                    </b>
+                </span>
+                <br /><br />
+                <span class="nav">{PAGINATION}<br /></span>
+            </td>
+        </tr>
+    </table>
+</form>
+<table width="98%" border="0">
+    <tr>
+        <td align="right" valign="top">{JUMPBOX}</td>
+    </tr>
+</table>

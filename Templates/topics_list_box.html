@@ -1,0 +1,94 @@
+<!-- BEGIN topics_list_box --><!-- BEGIN row --><!-- BEGIN header_table --><!-- BEGIN multi_selection -->
+<script type="text/javascript">
+function check_uncheck_main_{topics_list_box.row.header_table.BOX_ID}() {
+  var all_checked = true;
+  for (i = 0; (i < document.{topics_list_box.FORMNAME}.elements.length) && all_checked; i++) {
+      if (document.{topics_list_box.FORMNAME}.elements[i].name == '{topics_list_box.FIELDNAME}[]{topics_list_box.row.header_table.BOX_ID}') {
+        all_checked = document.{topics_list_box.FORMNAME}.elements[i].checked;
+      }
+  }
+  document.{topics_list_box.FORMNAME}.all_mark_{topics_list_box.row.header_table.BOX_ID}.checked = all_checked;
+}
+function check_uncheck_all_{topics_list_box.row.header_table.BOX_ID}() {
+  for (i = 0; i < document.{topics_list_box.FORMNAME}.length; i++) {
+      if (document.{topics_list_box.FORMNAME}.elements[i].name == '{topics_list_box.FIELDNAME}[]{topics_list_box.row.header_table.BOX_ID}') {
+        document.{topics_list_box.FORMNAME}.elements[i].checked = document.{topics_list_box.FORMNAME}.all_mark_{topics_list_box.row.header_table.BOX_ID}.checked;
+      }
+  }
+}
+</script>
+<!-- END multi_selection -->
+<table class="forumline" width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <div class="d_headerList">
+
+          <!-- BEGIN multi_selection -->
+            <div class="headerMulti"><input onclick="check_uncheck_all_{topics_list_box.row.header_table.BOX_ID}();" type="checkbox" name="all_mark_{topics_list_box.row.header_table.BOX_ID}" value="0" /></div>
+          <!-- END multi_selection -->
+  </div>
+  </tr>
+  <!-- BEGIN pagination -->
+  <tr>
+      <td class="row1" colspan="7" align="right"><span class="gensmall">{PAGINATION}</span></td>
+  </tr>
+  <!-- END pagination -->
+  <!-- END header_table --><!-- BEGIN header_row -->
+  <tr>
+      <td class="row3" colspan="{topics_list_box.row.COLSPAN}"><span class="gensmall"> <b>{topics_list_box.row.L_TITLE}</b></span></td>
+  </tr>
+<!-- END header_row -->
+<!-- BEGIN topic -->
+{topics_list_box.row.END_TABLE_STICKY}
+  <tr>
+      <div class="d_topicsList">
+          <!-- BEGIN single_selection -->
+            <div class="{topics_list_box.row.ROW_CLASS} TLmulti" align="center" valign="middle" width="20"><input type="radio" name="{topics_list_box.FIELDNAME}" value="{topics_list_box.row.FID}" {topics_list_box.row.L_SELECT} /></div>
+          <!-- END single_selection --> 
+          <div class="TLicon"><img title="{topics_list_box.row.L_TOPIC_FOLDER_ALT}" src="{topics_list_box.row.TOPIC_FOLDER_IMG}" alt="{topics_list_box.row.L_TOPIC_FOLDER_ALT}" /></div>
+              <div class="TLtitle">
+                <div class="titredescr">
+                  <div>
+                    <span id="topicType">{topics_list_box.row.TOPIC_TYPE}</span> <a href="{topics_list_box.row.U_VIEW_TOPIC}" class="title">{topics_list_box.row.TOPIC_TITLE}</a><span id="participation">{topics_list_box.row.PARTICIPATE_POST_IMG}</span>
+                  </div>
+                  <script type="text/javascript"> 
+                    document.getElementById('topicType').innerHTML=document.getElementById('topicType').innerHTML.replace(/Sortilège:/ ,"Sortilège :");
+                    document.getElementById('topicType').innerHTML=document.getElementById('topicType').innerHTML.replace(/Sortilège:/ ,"Sortilège :");
+                    document.getElementById('topicType').innerHTML=document.getElementById('topicType').innerHTML.replace(/Sortilège:/ ,"Sortilège :");
+                    document.getElementById('topicType').innerHTML=document.getElementById('topicType').innerHTML.replace(/Sortilège:/ ,"Sortilège :");
+                    
+                    document.getElementById('topicType').innerHTML=document.getElementById('topicType').innerHTML.replace(/Incantation:/ ,"Incantation :");
+                    document.getElementById('topicType').innerHTML=document.getElementById('topicType').innerHTML.replace(/Incantation:/ ,"Incantation :");
+                    document.getElementById('topicType').innerHTML=document.getElementById('topicType').innerHTML.replace(/Incantation:/ ,"Incantation :");
+                    
+                    document.getElementById('topicType').innerHTML=document.getElementById('topicType').innerHTML.replace(/Rituel:/ ,"Rituel :");
+
+                  </script>
+                  <!-- BEGIN switch_description --><div class="topicDesc">{topics_list_box.row.topic.switch_description.TOPIC_DESCRIPTION}</div><!-- END switch_description -->
+                </div>
+                  <div class="TLauthor">
+                    <span class="author">Ce sort a été conjuré par <strong>{topics_list_box.row.TOPIC_AUTHOR}</strong></span>
+                  </div>        
+        	</div>
+        <div class="TLreplies"><div class="TLreplies2">{topics_list_box.row.REPLIES} réponses</div><br/><div class="TLviews">{topics_list_box.row.VIEWS} vues</div></div>
+        <div class="TLlastPost">
+          <!-- BEGIN avatar -->
+<div style="width: 200px;"></div>
+<span class="TLlastpost-avatar">{topics_list_box.row.topic.avatar.LAST_POST_AVATAR}</span>
+<!-- END avatar -->
+          <div class="postdetails">{topics_list_box.row.LAST_POST_TIME}<br />{topics_list_box.row.LAST_POST_AUTHOR} <span id="topicimg">{topics_list_box.row.LAST_POST_IMG}</span></div></div>
+        <div class="baslist"></div>
+    </div>
+  </tr>
+  <!-- END topic --><!-- BEGIN no_topics --> 
+    <tr>
+      <div class="d_topicsList"><span class="gen noTopic">{topics_list_box.row.L_NO_TOPICS}</span></div>
+    </tr>
+  <!-- END no_topics --><!-- BEGIN bottom -->
+  <tr>
+      <div style="float:right">
+      <div style="display:inline-block; width:100px;">{PAGINATION}</div>
+      <div style="display:inline-block; width:20px;">{L_BACK_TO_TOP}</div>
+    </div>
+  </tr>
+<!-- END bottom --><!-- BEGIN footer_table -->
+</table><!-- END footer_table --><!-- BEGIN spacer --><br class="gensmall" /><!-- END spacer --><!-- END row --><!-- END topics_list_box -->

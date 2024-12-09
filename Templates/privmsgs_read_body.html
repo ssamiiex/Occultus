@@ -1,0 +1,81 @@
+<table class="boutonmp" border="0" cellspacing="2" cellpadding="0" align="center">
+	<tr>
+		<td valign="middle">{INBOX_IMG}</td>
+		<td valign="middle"><span class="cattitle">{INBOX}&nbsp;&nbsp;</span></td>
+		<td valign="middle">{SENTBOX_IMG}</td>
+		<td valign="middle"><span class="cattitle">{SENTBOX}&nbsp;&nbsp;</span></td>
+		<td valign="middle">{OUTBOX_IMG}</td>
+		<td valign="middle"><span class="cattitle">{OUTBOX}&nbsp;&nbsp;</span></td>
+		<td valign="middle">{SAVEBOX_IMG}</td>
+		<td valign="middle"><span class="cattitle">{SAVEBOX}</span></td>
+	</tr>
+</table>
+<script>$(function(){
+ $('a[href*="privmsg?mode=reply"] img').replaceWith('Répondre');
+  $('a[href*="privmsg?mode=quote"] img').replaceWith('Citer');
+  $('a[href*="privmsg?mode=edit"] img').replaceWith('Éditer');
+  });
+  </script>
+<br clear="all" />
+<form action="{S_PRIVMSGS_ACTION}" method="post">
+    <!-- BEGIN switch_post_reply -->
+    <table width="100%" border="0" cellspacing="2" cellpadding="0">
+        <tr>
+          <td valign="middle"><div class="btnmpreply">{REPLY_PM_IMG}</div></td>
+            <td width="100%"></td>
+        </tr>
+    </table>
+    <!-- END switch_post_reply -->
+<div class="mpfond" width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+  <table><tr>
+    <div class="mptopic">{POST_SUBJECT}</div>
+  </tr>
+  <tr>
+    <td>
+    <div class="avmp">{AVATAR_FROM}</div>
+    <div class="avname">{MESSAGE_FROM}</div>
+    </td>
+    <td>
+      <table>
+        <tr><span class="gen">{L_TO} : {MESSAGE_TO} </span> <span class="gen">{L_POSTED} : {POST_DATE}</span></tr>
+        <tr></tr>
+        <tr><div class="contentmp">
+          <!-- BEGIN switch_quote --><div class="btnmpquote">{QUOTE_PM_IMG}</div><!-- END switch_quote --> <div class="btnmpedit">{EDIT_PM_IMG}</div>
+          <div class="mppostbody">{MESSAGE}</div>
+          </div></tr>
+        <tr><span class="genmed"><a rel="nofollow" class="genmed" href="/st/{PUSERNAME}">{L_SEARCH_USER_POSTS} :</a> <a rel="nofollow" class="genmed" href="/sta/{PUSERNAME}">{L_TOPICS}</a> <a rel="nofollow" class="genmed" href="/spa/{PUSERNAME}">{L_POSTS}</a></span></tr>
+      </table>
+    </td></tr></table>
+</div>
+                {S_HIDDEN_FIELDS}
+                <!-- BEGIN switch_save -->
+                <input class="liteoption" type="submit" name="save" value="{L_SAVE_MSG}" />&nbsp;&nbsp;
+                <!-- END switch_save -->
+                <!-- BEGIN switch_move_profile -->
+                <input class="liteoption" type="submit" name="moveprofile" value="{L_MOVE_PROFILE}" />&nbsp;&nbsp;
+                <!-- END switch_move_profile -->
+                <input class="liteoption" type="submit" name="delete" value="{L_DELETE_MSG}" />
+
+    <table width="100%" border="0" cellspacing="2" cellpadding="0" align="center">
+        <tr>
+        </tr>
+        <!-- BEGIN switch_review_box -->
+        <tr>
+            <td colspan="2">{TOPIC_REVIEW_BOX}</td>
+        </tr>
+        <!-- END switch_review_box -->
+    </table>
+</form>
+<table width="100%" border="0" cellspacing="2" cellpadding="0" align="center">
+	<tr>
+		<td align="right" valign="top"><span class="gensmall">{JUMPBOX}</span></td>
+	</tr>
+</table>
+
+<!-- BEGIN switch_image_resize -->
+<script type="text/javascript">
+//<![CDATA[
+$(resize_images({ 'selector' : '.postbody', 'max_width' : {switch_image_resize.IMG_RESIZE_WIDTH}, 'max_height' : {switch_image_resize.IMG_RESIZE_HEIGHT} }));
+//]]>
+</script>
+<!-- END switch_image_resize -->

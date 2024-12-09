@@ -1,0 +1,110 @@
+<table width="100%" border="0" cellspacing="2" cellpadding="0" align="center">
+<tr>
+<td><span class="nav"><a class="nav" href="{U_INDEX}">{L_INDEX}</a></span></td>
+</tr>
+</table>
+<script>$(function(){
+  $('a[href*="privmsg?mode=post"] img').replaceWith('Mp');
+  $('a[href*="profile?mode=email"] img').replaceWith('Email');
+  $('.pfctext img[src="https://2img.net/i/fa/modernbb/icon_contact_www.png"]').replaceWith("Présentation");
+  $('.pfctext img[src="https://2img.net/i/fa/modernbb/icon_contact_fb.png"]').replaceWith("Liens");
+  $('.pfctext img[src="https://2img.net/i/fa/modernbb/icon_contact_twitter.png"]').replaceWith("Playlist");
+  $('.pfctext img[src="https://2img.net/i/fa/modernbb/icon_contact_pinterest.png"]').replaceWith("Moodboard");
+  $('.pfctext img[src="https://2img.net/i/fa/modernbb/icon_contact_skype.png"]').replaceWith("Autre");
+  });
+  </script>
+<div class="fondprofil" width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+  <table><tr>
+    <div class="fonduser">{USERNAME}</div>
+  </tr>
+  <tr>
+    <td>
+    <div class="avprofil"><span id="avatar_membre">{AVATAR_IMG}</span></div>
+    <div class="rgprofil">{POSTER_RANK}</div>
+    </td>
+    <td>
+      <table>
+        <tr><div id="ligneprofil"><span class="gen">{USER_ONLINE}</span> <dsp2>†</dsp2> Nous l'avons vu pour la dernière fois <span class="gen">{LAST_VISIT_TIME}</span>
+          <br/><div class="pfctext"><!-- BEGIN contact_field --><div class="contactprofil">{contact_field.CONTENT}</div><!-- END contact_field --></div></div></tr>
+        <tr></tr>
+        <tr><div class="infoprofil"><!-- BEGIN profile_field --><div id="field_id{profile_field.ID}"><div><span class="gen">{profile_field.LABEL}</span> {profile_field.CONTENT}</div></div><div class="basprofil"></div><!-- END profile_field --></div></tr>
+        <tr><span class="genmed"><a rel="nofollow" class="genmed" href="/st/{PUSERNAME}">{L_SEARCH_USER_POSTS} :</a> <a rel="nofollow" class="genmed" href="/sta/{PUSERNAME}">{L_TOPICS}</a> <dsp2>†</dsp2> <a rel="nofollow" class="genmed" href="/spa/{PUSERNAME}">{L_POSTS}</a></span></tr>
+      </table>
+    </td></tr></table>
+</div>
+<br />
+<script src="{JQUERY_ROOT}json/jquery.json-1.3.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+	$(document).ready(function(){
+		$('[id^=field_id]').each(function(){
+			if ( $(this).find('.field_editable').is('span, div') )
+			{
+				$(this).hover(function()
+				{
+					if( $(this).find('.field_editable.invisible').is('span, div') )
+					{
+						$(this).find('.field_editable').prev().addClass('ajax-profil_hover').parent().addClass('ajax-profil_parent').append('<div class="ajax-profil_edit"><img src="{AJAX_EDIT_IMG}" /></div>');
+						$(this).find('.ajax-profil_edit').attr({
+								alt: "{L_FIELD_EDIT_VALUE}",
+								title: "{L_FIELD_EDIT_VALUE}"
+							}).click(function(){
+							$(this).prev().prev().removeClass('ajax-profil_hover').addClass('invisible').next().removeClass('invisible').append('<img src="{AJAX_VALID_IMG}" class="ajax-profil_valid" />').find('input,select');
+							$(this).prev().find('.ajax-profil_valid').attr({
+								alt: "{L_VALIDATE}",
+								title: "{L_VALIDATE}"
+							}).click(function(){
+								var content = new Array();
+								$(this).parent().find('[name]').each(function(){
+									var type_special = $(this).is('input[type=radio],input[type=checkbox]');
+									if ( (type_special && $(this).is(':checked')) || !type_special )
+									{
+										content.push(new Array($(this).attr('name'), $(this).attr('value')));
+									}
+								});
+								var id_name = $(this).parents('[id^=field_id]').attr('id');
+								var id = id_name.substring(8, id_name.length);
+								$.post(
+									"{U_AJAX_PROFILE}",
+									{id:id,user:"{CUR_USER_ID}",active:"{CUR_USER_ACTIVE}",content:$.toJSON(content),tid:"{TID}"},
+									function(data){
+										$.each(data, function (i, item) {
+											if (item.startsWith('error : ')){
+												let present_err=document.getElementById('field_id' + i + "_err");
+												if(!present_err){
+													let err = document.createElement('div');
+													err.id = 'field_id' + i + "_err";
+													err.classList.add("form-error");
+													err.textContent = item.substring(8);
+													document.getElementById('field_id' + i).querySelector('.field_editable input').after(err);
+												}else{
+													present_err.innerText=item.substring(8);
+												}
+											}else {
+												let err=document.getElementById('field_id' + i + "_err");
+												if(err){
+													err.remove();
+												}
+												$('[id=field_id' + i + ']').find('.field_uneditable').html(item).end().find('.ajax-profil_valid').remove().end().find('.field_editable').addClass('invisible').end().find('.field_uneditable').removeClass('invisible');
+											}
+										});
+									},
+									"json"
+								);
+							});
+							$(this).remove();
+						});
+					}
+				},function()
+				{
+					if( $(this).find('.field_editable.invisible').is('span, div') )
+					{
+						$(this).find('.field_editable').prev().removeClass('ajax-profil_hover');
+						$(this).find('.ajax-profil_edit').remove();
+					}
+				});
+			}
+		});
+	});
+//]]>
+</script>

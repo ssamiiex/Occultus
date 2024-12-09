@@ -1,0 +1,53 @@
+{BOARD_INDEX}
+
+<script>$(function(){
+ $('a[href*="mode=newtopic"] img').replaceWith('Nouveau');
+  });
+  </script>
+<table width="100%" border="0" cellspacing="2" cellpadding="0" align="center">
+	<tr>
+          <td align="left" valign="middle" width="50">
+			<!-- BEGIN switch_user_authpost -->
+                  <div class="newtopic"><a href="{U_POST_NEW_TOPIC}" rel="nofollow"><img src="{POST_IMG}" id="{POST_IMG_ID}" alt="{L_POST_NEW_TOPIC}" border="0" /></a></div>
+			<!-- END switch_user_authpost -->
+          </td>
+                  <td class="nav" valign="middle" width="100%">
+            <div id="filariane"><div class="nav"></div>
+              <a class="nav" href="{U_INDEX}"><span>{L_INDEX}</span></a><span id="navsujet">{NAV_CAT_DESC}</span>
+            </div>
+                  </td>
+	</tr>
+</table>
+<script>
+ document.getElementById('filariane').innerHTML=document.getElementById('filariane').innerHTML.replace(/::/,"†");
+  document.getElementById('navsujet').innerHTML=document.getElementById('navsujet').innerHTML.replace(/::/,"†");
+  document.getElementById('navsujet').innerHTML=document.getElementById('navsujet').innerHTML.replace(/::/,"†");
+  document.getElementById('navsujet').innerHTML=document.getElementById('navsujet').innerHTML.replace(/::/,"†");
+  document.getElementById('navsujet').innerHTML=document.getElementById('navsujet').innerHTML.replace(/::/,"†");
+</script>
+
+{TOPICS_LIST_BOX}
+
+<table width="100%" border="0" cellspacing="2" cellpadding="0" align="center">
+	<tr>
+		<td align="left" valign="middle" width="50">
+			<!-- BEGIN switch_user_authpost -->
+                  <div class="newtopic"><a href="{U_POST_NEW_TOPIC}" rel="nofollow"><img src="{POST_IMG}" id="{POST_IMG_ID}1" alt="{L_POST_NEW_TOPIC}" border="0" /></a></div>
+			<!-- END switch_user_authpost -->
+		</td>
+		<td align="right" nowrap="nowrap">
+			<!-- BEGIN switch_sort_options -->
+			<span id="sort-box" class="gensmall">
+				<form method="post" class="sort-form">
+					{switch_sort_options.L_SORT_BY}:&nbsp;
+					<select name="sort_method">
+						{switch_sort_options.S_OPTIONS}
+					</select>
+					&nbsp;<input class="liteoption" type="submit" value="{switch_sort_options.L_SORT}" />
+				</form>
+			</span>
+			<!-- END switch_sort_options -->
+			<form action="{S_JUMPBOX_ACTION}" method="get" name="jumpbox" onsubmit="if(document.jumpbox.f.value == -1){return false;}"><span class="gensmall">{L_JUMP_TO}:&nbsp;{S_JUMPBOX_SELECT}&nbsp;<input class="liteoption" type="submit" value="{L_GO}" /></span></form>
+		</td>
+	</tr>
+</table>

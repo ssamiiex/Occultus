@@ -1,0 +1,262 @@
+{JAVASCRIPT}
+<!-- BEGIN message_admin_index -->
+<table class="forumline" width="100%" border="0" cellspacing="1" cellpadding="0">
+	<!-- BEGIN message_admin_titre -->
+	<tr>
+		<td class="catHead" height="28"><span class="cattitle">{message_admin_index.message_admin_titre.MES_TITRE}</span></td>
+	</tr>
+	<!-- END message_admin_titre -->
+	<!-- BEGIN message_admin_txt -->
+	<tr>
+		<td class="row1" rowspan="3" align="center" valign="middle">
+		<div class="gensmall">{message_admin_index.message_admin_txt.MES_TXT}</div>
+		</td>
+	</tr>
+	<!-- END message_admin_txt -->
+</table>
+<!-- END message_admin_index -->
+
+<!-- BEGIN switch_user_login_form_header -->
+<form action="{S_LOGIN_ACTION}" method="post" name="form_login">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="user_login_form forumline">
+        <tr>
+            <td width="50%" valign="top" align="{switch_user_login_form_header.V_ALIGN}" class="row1">
+
+                <table>
+                    <tr>
+                        <td><span class="genmed">{L_USERNAME}:</span>&nbsp;</td>
+                        <td><input class="post" type="text" size="10" name="username"/>&nbsp;</td>
+                        <td>
+                            <input class="radio" type="checkbox" name="autologin" {AUTOLOGIN_CHECKED} />
+                            <span class="gensmall">{L_AUTO_LOGIN}</span>&nbsp;
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="genmed">{L_PASSWORD}:</span>&nbsp;</td>
+                        <td><input class="post" type="password" size="10" name="password"/></td>
+                        <td>{S_HIDDEN_FIELDS}<input class="mainoption" type="submit" name="login" value="{L_LOGIN}" /></td>
+                    </tr>
+                </table>
+            </td>
+
+            <!-- BEGIN switch_social_login -->
+            <td width="10%" align="center" valign="middle" class="row1">
+                <span class="genmed fb_or">{switch_user_login_form_header.switch_social_login.L_OR}</span>
+            </td>
+            <td width="40%" class="align_gauche row1">
+                <div class="social_btn">
+                    <!-- BEGIN fb_connect -->
+                    <div class="fb-login-button"></div>
+                    <!-- END fb_connect -->
+                    <!-- BEGIN topicit_connect -->
+                    <div class="ti-connect"></div>
+                    <!-- END topicit_connect -->
+                </div>
+            </td>
+            <!-- END switch_social_login -->
+
+        </tr>
+    </table>
+</form>
+<!-- END switch_user_login_form_header -->
+
+{CHATBOX_TOP}
+{BOARD_INDEX}
+<table class="blocliens_message" width="100%" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td width="50%" valign="top">
+			<!-- BEGIN switch_user_logged_in --><span class="gensmall"><a href="{U_MARK_READ}" class="gensmall">{L_MARK_FORUMS_READ}</a></span> <dsp2>†</dsp2><!-- END switch_user_logged_in --><!-- BEGIN switch_delete_cookies --> <span class="gensmall"><a href="{switch_delete_cookies.U_DELETE_COOKIES}" class="gensmall" rel="nofollow">{switch_delete_cookies.L_DELETE_COOKIES}</a></span> <dsp2>†</dsp2><!-- END switch_delete_cookies --> <span class="gensmall"><a href="{U_TODAY_ACTIVE}" class="gensmall">{L_TODAY_ACTIVE}</a> <dsp2>†</dsp2><!-- BEGIN switch_on_index --><!-- BEGIN switch_delete_cookies --> <a href="{switch_on_index.switch_delete_cookies.U_DELETE_COOKIES}" class="gensmall" rel="nofollow">{switch_on_index.switch_delete_cookies.L_DELETE_COOKIES}</a><!-- END switch_delete_cookies --><!-- END switch_on_index -->
+			</span>
+		</td>
+	</tr>
+</table><br/>
+<!-- BEGIN switch_user_login_form_footer -->
+<form action="{S_LOGIN_ACTION}" method="post" name="form_login">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="user_login_form forumline">
+        <tr>
+            <td width="50%" valign="top" align="right" class="row1">
+
+                <table>
+                    <tr>
+                        <td><span class="genmed">{L_USERNAME}:</span>&nbsp;</td>
+                        <td><input class="post" type="text" size="10" name="username"/>&nbsp;</td>
+                        <td>
+                            <input class="radio" type="checkbox" name="autologin" {AUTOLOGIN_CHECKED} />
+                            <span class="gensmall">{L_AUTO_LOGIN}</span>&nbsp;
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="genmed">{L_PASSWORD}:</span>&nbsp;</td>
+                        <td><input class="post" type="password" size="10" name="password"/>&nbsp;</td>
+                        <td>{S_HIDDEN_FIELDS}<input class="mainoption" type="submit" name="login" value="{L_LOGIN}" /></td>
+                    </tr>
+                </table>
+            </td>
+
+            <!-- BEGIN switch_social_login -->
+            <td width="10%" align="center" valign="middle" class="row1">
+                <span class="genmed fb_or">{switch_user_login_form_footer.switch_social_login.L_OR}</span>
+            </td>
+            <td width="40%" class="align_gauche row1">
+                <div class="social_btn">
+                    <!-- BEGIN fb_connect -->
+                    <div class="fb-login-button"></div>
+                    <!-- END fb_connect -->
+                    <!-- BEGIN topicit_connect -->
+                    <div class="ti-connect"></div>
+                    <!-- END topicit_connect -->
+                </div>
+            </td>
+            <!-- END switch_social_login -->
+
+        </tr>
+    </table>
+</form>
+<!-- END switch_user_login_form_footer -->
+
+<!-- BEGIN disable_viewonline -->
+<!-- QEEL -->
+<script type="text/javascript">
+function ShowHide(id1,id2,id3) {
+    document.getElementById(id1).className = 'qeel-tab-content qeel-active';
+    document.getElementById(id2).className = 'qeel-tab-content';
+    document.getElementById(id3).className = 'qeel-tab-content';
+}
+
+function ChangeClass(id1,id2,id3) {
+    document.getElementById(id1).className = 'qeel-tab-btn qeel-active';
+    document.getElementById(id2).className = 'qeel-tab-btn';
+    document.getElementById(id3).className = 'qeel-tab-btn';
+}
+</script>
+<table class="qeel">
+  <tr>
+    <td>
+  <div class="qeelcopyright">
+    <div class="copyright">
+      <div class="copyrighttxt">
+        <dsp>©</dsp> Le forum a été pensé et conçu par TWISTY.RAIN. Le design et le codage ont entièrement été faits par TWISITY.RAIN à l'exception du switcheroo qui appartient à Monomer. Toute reproduction entière ou partielle est interdite. 
+      </div>
+    </div>
+    <div class="info">
+      <div class="infotxt">
+        (<dsp>01.12.24</dsp>) Lancement de l'intrigue 01 (<dsp>01.12.24</dsp>) Ouverture officielle d'Occultus (<dsp>15.11.24</dsp>) Pré-ouverture pour les prévenus
+      </div>
+    </div>
+  </div>
+</td>
+<td><div class="qeelgroup">
+<div class="qeel-container">
+  <!-- Content Area Above -->
+  <div class="qeel-content-wrapper">
+    <div id="qeel-content1" class="qeel-tab-content qeel-active">
+      <div class="qeel-content-area">
+        <img src="https://i.pinimg.com/originals/53/96/4e/53964e3175f8a4316a030a78b2b7fab3.gif"/>
+        Âmes résilientes vivant au cœur de l'invisible. Bien que mortels et physiquement vulnérables face au surnaturel, ils possèdent une force de caractère et une adaptabilité qui compensent leur fragilité. Certains humains sont ignorants des forces occultes qui les entourent, tandis que d'autres connaissent les vérités cachées et choisissent de se dresser contre ou de s’allier à elles. Ils sont des explorateurs de l'inconnu et parfois même des chasseurs déterminés, prêts à défendre leur monde face à l'ombre.
+      </div>
+    </div>
+    
+    <div id="qeel-content2" class="qeel-tab-content">
+      <div class="qeel-content-area">
+        <img src="https://i.pinimg.com/originals/cd/89/38/cd8938269b5eeb2d39c932f4a4b30429.gif"/>
+        Détenteurs d’un savoir occulte transmis par les âges, les sorciers sont des humains nés ou initiés avec la capacité de manipuler des forces mystiques. Leur puissance varie selon l’expérience, les lignées et les connaissances rituelles accumulées. Les sorciers sont les historiens du surnaturel, les lecteurs d’étoiles, et les boussoles morales occultes. Leurs pouvoirs s'accompagnent cependant d'un lourd fardeau : l'utilisation de la magie peut altérer leur esprit et les lier à des forces qu'ils ne contrôlent pas toujours. Certains cherchent à équilibrer les mondes, d’autres à assouvir leur soif de connaissance et de pouvoir, au risque de devenir esclaves de l'obscurité.
+      </div>
+    </div>
+    
+    <div id="qeel-content3" class="qeel-tab-content">
+      <div class="qeel-content-area">
+        <img src="https://i.pinimg.com/originals/3f/6a/d2/3f6ad2eca6e3864537085242ee3b8578.gif"/>
+        Créatures éternelles, condamnées à la nuit et assoiffées de vie. Nés de la morsure maudite et liés par des règles anciennes, ils se nourrissent du sang des vivants, qui devient leur essence vitale. Dotés d'une force et d'une rapidité surhumaines, ils possèdent aussi un charme envoûtant qui fascine les mortels. Certains embrassent leur nature prédatrice, tandis que d’autres luttent pour garder une trace de leur humanité. Mais tous partagent une aversion pour la lumière du jour et une soif insatiable qui les pousse à vivre dans un équilibre fragile.
+      </div>
+    </div>
+  </div>
+
+  <!-- Vertical Tab Navigation Below -->
+  <div class="qeel-tab-nav">
+    <div id="qeel-tab1" class="qeel-tab-btn qeel-active" onClick="javascript:ShowHide('qeel-content1','qeel-content2','qeel-content3');ChangeClass('qeel-tab1','qeel-tab2','qeel-tab3')"><span class="human">Drawn to Darkness</span></div>
+    <div id="qeel-tab2" class="qeel-tab-btn" onClick="javascript:ShowHide('qeel-content2','qeel-content1','qeel-content3');ChangeClass('qeel-tab2','qeel-tab1','qeel-tab3')"><span class="witch">The stars know their names</span></div>
+      <div id="qeel-tab3" class="qeel-tab-btn" onClick="javascript:ShowHide('qeel-content3','qeel-content1','qeel-content2');ChangeClass('qeel-tab3','qeel-tab1','qeel-tab2')"><span class="vampire">Say goodbye to sunrise</span></div>
+  </div>
+</div>
+</div></td>
+    <td>
+    <div class="qeelnow">
+      <div class="blocnow">
+        <div class="totaluser"><span id="totaluser">{TOTAL_USERS_ONLINE}{TOTAL_USERS}{TOTAL_POSTS}</span></div><br/>
+          <script type="text/javascript"> 
+  document.getElementById('totaluser').innerHTML=document.getElementById('totaluser').innerHTML.replace(/Il y a en tout/ ,"Parmi les résidents de Bucarest,");
+  
+  document.getElementById('totaluser').innerHTML=document.getElementById('totaluser').innerHTML.replace(/utilisateur en ligne/,"ombre grouille");
+  
+  document.getElementById('totaluser').innerHTML=document.getElementById('totaluser').innerHTML.replace(/utilisateurs en ligne/,"ombres grouillent");
+  
+  document.getElementById('totaluser').innerHTML=document.getElementById('totaluser').innerHTML.replace(/::/,",");
+  
+  document.getElementById('totaluser').innerHTML=document.getElementById('totaluser').innerHTML.replace(/Enregistré/,"habitant se promène");
+  
+  document.getElementById('totaluser').innerHTML=document.getElementById('totaluser').innerHTML.replace(/Enregistrés/,"habitants se promènent");
+
+  document.getElementById('totaluser').innerHTML=document.getElementById('totaluser').innerHTML.replace(/Invisible/,"entité grandit");
+
+  document.getElementById('totaluser').innerHTML=document.getElementById('totaluser').innerHTML.replace(/Invisibles/,"entités grandissent");
+
+  document.getElementById('totaluser').innerHTML=document.getElementById('totaluser').innerHTML.replace(/Invité/,"spectre hante les lieux.");
+
+  document.getElementById('totaluser').innerHTML=document.getElementById('totaluser').innerHTML.replace(/Invités/,"spectres hantes les lieux.");
+  
+  document.getElementById('totaluser').innerHTML=document.getElementById('totaluser').innerHTML.replace(/Nous avons /,"On compte un total de ") .replace(/membres enregistrés/,"citoyens.") .replace(/membre enregistré/,"citoyen.");
+  
+  document.getElementById('totaluser').innerHTML=document.getElementById('totaluser').innerHTML.replace(/Nos membres ont posté un total de /," La ville possède ") .replace(/messages/,"archives.");
+        </script>
+<span class="gensmall" id="loggedusers"><table id="lastco">{LOGGED_IN_USER_LIST}</table></span>
+        <script type="text/javascript">
+          document.getElementById('loggedusers').innerHTML=document.getElementById('loggedusers').innerHTML.replace(/Utilisateurs enregistrés /,"Rôdant présentement ");
+        </script>
+      </div>
+    </div>
+    </td>
+  </tr>
+  <tr>
+    <td><div class="qeeldernier">
+      <!-- DERNIER UTILISATEUR ENREGISTRE --><div class="dernier_membre">
+      <table>
+        <td>
+          <span id="avatar_dernier_membre"></span>
+        </td>
+      <!-- DERNIER INSCRIT --><td>
+        <div class="info_dernier">
+          <span id="dernier_membre">{NEWEST_USER}</span>
+          <br/>emménage à Bucarest
+        </div>
+        </td>
+      </table>
+      <script type="text/javascript">document.getElementById('dernier_membre').innerHTML=document.getElementById('dernier_membre').innerHTML.replace(/L'utilisateur enregistré le plus récent est /," ")</script></div>
+</div></td>
+        <td><div class="qeelliens">
+</div></td>
+    <td>
+      <div class="qeel24">
+      <div class="blocpast">
+        <div id="pastuser">
+           <table class="pastuser">
+             <tr>
+               <td>
+                 <span class="gensmall">{L_CONNECTED_MEMBERS}</span>
+         <script type="text/javascript">document.getElementById('pastuser').innerHTML=document.getElementById('pastuser').innerHTML.replace(/Membres connectés au cours des [0-9]* dernières heures :/,"Ils ont rôdé récemment :");</script>
+               </td>
+             </tr>
+          </table>
+        </div>
+      </div>
+      </div>
+    </td>
+  </tr>
+</table>
+<!-- QEEL -->
+<!-- END disable_viewonline -->
+{CHATBOX_BOTTOM}
+<br clear="all" />
+
+{AUTO_DST}
