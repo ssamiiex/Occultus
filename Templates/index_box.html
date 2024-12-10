@@ -17,39 +17,36 @@
        <!-- BEGIN inc -->
 <td class="{catrow.forumrow.inc.INC_CLASS}" width="46"><img src="{SPACER}" height="0" width="46" alt="." /></td>
             <!-- END inc -->
-<td align="left" valign="top">
-<table width="100%" cellpadding="0" cellspacing="0">
-<tr>
-  <td align="center" valign="top">
+<td class="cate_row"> <!-- category row -->
+  <div class="cate_row_bg">
   <div class="image_cate">
-<img title="{catrow.forumrow.L_FORUM_FOLDER_ALT}" src="{catrow.forumrow.FORUM_FOLDER_IMG}" alt="{catrow.forumrow.L_FORUM_FOLDER_ALT}" />  
+    <img title="{catrow.forumrow.L_FORUM_FOLDER_ALT}" src="{catrow.forumrow.FORUM_FOLDER_IMG}" alt="{catrow.forumrow.L_FORUM_FOLDER_ALT}" />  
   </div>
-  </td>
-  <td valign="top">
-    <table width="100">
-    <tr><td width="70%">
+  <div class="cate_right">
+    <div class="cate_right_top">
       <div class="descrip_bloc1">
         <div class="forumtitre">
-      <a href="{catrow.forumrow.U_VIEWFORUM}">{catrow.forumrow.FORUM_NAME}</a>
+          <a href="{catrow.forumrow.U_VIEWFORUM}">{catrow.forumrow.FORUM_NAME}</a>
         </div>
-        <div class="descr_texte">{catrow.forumrow.FORUM_DESC}</div>
+      <div class="descr_texte">{catrow.forumrow.FORUM_DESC}</div>
+    </div>
+
+    <div class="descrimg"></div>
+
+<div class="lastpost_bloc">
+    <!-- BEGIN avatar --> 
+    <div class="lastpost_avatar">{catrow.forumrow.avatar.LAST_POST_AVATAR}</div>
+    <!-- END avatar -->
+     <div class="lastpost_topic">
+        <div  class="forumdesc1">{catrow.forumrow.LAST_POST}</div>
+        <div class="cattopic">{catrow.forumrow.TOPICS} Sujets <dsp2>†</dsp2> {catrow.forumrow.POSTS} Messages</div>
       </div>
-      <div class="sousforums"><div class="lienssousforums">{catrow.forumrow.L_LINKS}{catrow.forumrow.LINKS}</div></div></td></tr>
-    </table>
-  </td>
-  <td><div class="descrimg"></div>
-  </td>
-<td valign="top"><div class="statistiques_cat">
-  <!-- BEGIN avatar --> 
-  <span class="lastpost-avatar">{catrow.forumrow.avatar.LAST_POST_AVATAR}</span>
-  <!-- END avatar -->
-  <span class="genmed">
-    <div  class="forumdesc1">{catrow.forumrow.LAST_POST}</div>
-  </span>
-  <div class="cattopic">{catrow.forumrow.TOPICS} Sujets <dsp2>†</dsp2> {catrow.forumrow.POSTS} Messages</div></div></td>
-</tr>
-</table>
-<center><div class="bascat"></div></center></td></tr>
+</div>
+  </div>
+<div class="sousforums"><div class="lienssousforums">{catrow.forumrow.L_LINKS}{catrow.forumrow.LINKS}</div></div>
+</div> 
+</div><!-- end category row -->
+</td></tr>
                 <!-- END forumrow -->
    <!-- BEGIN catfoot -->
    <tr>
