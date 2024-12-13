@@ -105,7 +105,7 @@ faible {text-decoration: none;
   border-radius: var(--border-radius3);
   font: 11px var(--font)!important;
   color: var(--text);
-  font-weight:700;
+  font-weight:900 !important;
   text-transform: uppercase;
   border-radius:var(--border-radius2);
   padding-inline:5px;
@@ -115,7 +115,7 @@ moyen {text-decoration: none;
   border-radius: var(--border-radius3);
   font: 11px var(--font)!important;
   color: var(--text);
-  font-weight:700;
+  font-weight:900 !important;
   text-transform: uppercase;
   border-radius:var(--border-radius2);
   padding-inline:5px;
@@ -125,7 +125,7 @@ eleve {text-decoration: none;
   border-radius: var(--border-radius3);
   font: 11px var(--font)!important;
   color: var(--text);
-  font-weight:700;
+  font-weight:900 !important;
   text-transform: uppercase;
   border-radius:var(--border-radius2);
   padding-inline:5px;
@@ -135,7 +135,7 @@ extreme {text-decoration: none;
   border-radius: var(--border-radius3);
   font: 11px var(--font)!important;
   color: var(--text);
-  font-weight:700;
+  font-weight:900 !important;
   text-transform: uppercase;
   border-radius:var(--border-radius2);
   padding-inline:5px;
@@ -733,7 +733,6 @@ a#fa_notifications {position:fixed;left:90%;top:1px;} /*position des notificatio
 
 #i_logo:hover {
   width: 800px; /*redimensionne le header*/
-  heigth: 456px; /*redimensionne le header*/
   margin:auto;/*positionne le header*/
   border-radius: var(--border-radius); /*arrondir les bordures*/
   background-image: url('https://images2.imgbox.com/c2/d1/im4CoJS7_o.gif');
@@ -761,12 +760,12 @@ span.sitedescription {display:none!important;} /*supprimer le sous-titre du foru
 /*LIENS DU FORUM*/
 .blocliens_message {
   width: 800px;
-  height:30px;
+  height:25px;
   border: var(--border);
   border-radius: var(--border-radius2);
   margin: 0 auto;
   text-align: center;
-  padding-top: 3px;
+  padding-top: 5px;
 }
 .blocliens_message a{
   color: var(--link);
@@ -775,6 +774,7 @@ span.sitedescription {display:none!important;} /*supprimer le sous-titre du foru
   text-transform:lowercase;
   text-align: center;
   margin: auto;
+  margin-inline: 5px;
 }
 .blocliens_message a:hover{
   color: var(--link3);
@@ -1199,11 +1199,7 @@ span.sitedescription {display:none!important;} /*supprimer le sous-titre du foru
 }/*bloc de l\'image*/
 .sousforums {
   height: 20px;
-  background-color: var(--greyer);
-  box-shadow: var(--box-shadow);
-  border-radius: var(--border-radius3);
   margin-top: 5px;
-  border: var(--border);
 }/*mise en place des sous-forums*/
 .lienssousforums {
   line-height: 20px;
@@ -1214,7 +1210,12 @@ span.sitedescription {display:none!important;} /*supprimer le sous-titre du foru
   color: #857b8a;
   font: 10px var(--font);
   text-transform: uppercase;
-  font-weight: 600;
+  font-weight: 900;
+  border: var(--border);
+  padding-inline:10px;
+  border-radius: var(--border-radius2);
+  background-color: var(--greyer);
+  box-shadow: var(--box-shadow);
 /* Bientôt supporté par Firefox */
   -moz-transition-duration:0.5s;
   -moz-transition-timing-function:ease-in;
@@ -1225,45 +1226,6 @@ span.sitedescription {display:none!important;} /*supprimer le sous-titre du foru
 .sousforums a:hover {
   color:var(--link3); 
 }/*transition du style de forum*/
-.statistiques_cat {
-  width: 220px; 
-  height: 109px;
-  background-color: var(--greyer);
-  box-shadow: var(--box-shadow);
-  border-radius: var(--border-radius2);
-  border: var(--border);
-  font: 10px var(--font)!important;
-  text-transform: lowercase;
-  color:var(--text);
-  margin-top:13px;
-  margin-left:-10px;
-} /*le style des statistiques en général*/
-.statistiques_cat a{
-  text-align: center; 
-  font: 11px var(--font);
-  font-weight: 700;
-  color: var(--link3);
-  text-decoration: none;
-  text-transform: lowercase;
-  -webkit-transition-duration:0.5s;
-  -webkit-transition-timing-function:ease-in;
-/* Bientôt supporté par Firefox */
-  -moz-transition-duration:0.5s;
-  -moz-transition-timing-function:ease-in;
-/* … et lorsque ce sera standardisé */ 
-  transition-duration:0.5s; 
-  transition-timing-function:ease-in;
-}/*style des liens*/
-.statistiques_cat a:hover{
-  color:var(--link3)!important; 
-}/*transition du style de forum*/
-.statistiques_cat strong{
-  text-align: center; 
-  font: 11px var(--font); 
-  font-weight: 700; 
-  text-transform: lowercase;
-  text-decoration: none; 
-}/*style des pseudo*/
 .lastpost_bloc {
   width: 220px;
   background-color: var(--greyer);
@@ -1295,7 +1257,14 @@ span.sitedescription {display:none!important;} /*supprimer le sous-titre du foru
 .forumdesc1 a {
   text-transform: uppercase;
   font-weight: 600;
-  font-size: 10px;
+  font-size: 9px;
+  letter-spacing: 1.2px;
+}
+.forumdesc1 strong {
+  text-transform: lowercase;
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 0px;
 }
 .cattopic{ 
   margin: 5px 4px 0;
@@ -1480,16 +1449,22 @@ span.sitedescription {display:none!important;} /*supprimer le sous-titre du foru
 .blocnow a {
   font: var(--font); 
   color: var(--link3);
-  font-weight: 700; 
   text-decoration: none;
+  text-transform: lowercase;
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 0px;
 }
 .blocnow strong{
   font: var(--font); 
-  font-weight: 700; 
   text-decoration: none; 
+  text-transform: lowercase;
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 0px;
 }
 #totaluser {
-  font-size: 10px!important;
+  font-size: 11px!important;
 }
 .gensmall {
   font-size: var(--default-font-size);
@@ -1516,16 +1491,22 @@ span.sitedescription {display:none!important;} /*supprimer le sous-titre du foru
   padding: 5px;
   margin-top:-70px;
 }
-.blocpast strong {
-  font: var(--font); 
-  font-weight: 700; 
-  text-decoration: none;
-}
 .blocpast a {
   font: var(--font); 
   color: var(--link3);
-  font-weight: 700; 
   text-decoration: none;
+  text-transform: lowercase;
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 0px;
+}
+.blocpast strong{
+  font: var(--font); 
+  text-decoration: none; 
+  text-transform: lowercase;
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 0px;
 }
 #pastuser{
   background-color: transparent;
@@ -2044,7 +2025,7 @@ table.fondsujet {
   font-size: 12px;
   font-weight: 600;
   text-transform: lowercase;
-  color: var(--link3); !important;
+  color: var(--link3);
 }
 .profilinside div {
   border-bottom: 0.5px #2f2e2a solid;
