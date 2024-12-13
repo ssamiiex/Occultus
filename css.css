@@ -3,14 +3,14 @@
   --text: #c7bdbb;
   --humain: #727d4b;
   --sorcier: #7a5c98;
-  --vampire: #9a4c23;
+  --vampire: #a15555;
   --red: #65281d; /*couleur des niveaux*/
   --orange: #65411d; /*couleur des niveaux*/
   --green: #53651d; /*couleur des niveaux*/
   --yellow: #655d1d; /*couleur des niveaux*/
-  --link: #892629; /*couleur des lien rouges*/
-  --link2: #4B3623; /*couleur des liens au survol beige*/
-  --link3: #917051; /*couleur des liens gold*/
+  --link: #876a92;
+  --link2: #4b3e60;
+  --link3: #7b8a87;
   --text-shadow: 0px 0px 4px #0F0A0E; /*text-shadow noir*/
   --light: #7b7673;
   --lighter: #c7bdbb;
@@ -27,8 +27,8 @@
   --box-shadow: 0 0 1px #000000, 0 0 12px #0a0a0a inset;
   --font: Open Sans, sans-serif!important;
   --font2: Pirata One;
-  --font3: Playfair Display;
-  --default-font-size: 12px;
+  --font3: Merriweather;
+  --default-font-size: 11px;
   --gap-size: 12px;
   --ease: cubic-bezier(0.4, 0.0, 0.2, 1);
   --ease-bounce: cubic-bezier(0.43, 0.09, 0.38, 2.56);
@@ -40,12 +40,18 @@ body {
   font-size: var(--default-font-size);
   font-style: normal;
 }
-a {text-decoration: none;} 
-a:link { text-decoration: none; transition: 0.5s;
-  -webkit-transition: 0.5s;} /*style des liens*/
-a:hover {text-decoration: none!important; color: var(--link2);} /*transition de la couleur du lien au survol*/
-dsp {text-decoration: none;
+a, a:link, a:visited {
+  text-decoration: none;
+  color: var(--link);
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+} /*style des liens*/
+a:hover {
+  text-decoration: none!important;
   color: var(--link3);
+}
+dsp {text-decoration: none;
+  color: var(--link);
   font-weight:700;
   letter-spacing:0.5;
 }
@@ -288,11 +294,11 @@ div.cont_code { clear: right; }
 /* Scrollbar */
 ::-webkit-scrollbar {
 width: 4px;
-height: 20px;}
+height: 4px;}
   ::-webkit-scrollbar-track-piece  {
 background-color: var(--grey);}
 ::-webkit-scrollbar-thumb:vertical {
-  height: 20px;
+  height: 4px;
 background-color: var(--link2);}
 ::-webkit-scrollbar-thumb:horizontal{
 height: 4px;
@@ -763,22 +769,26 @@ span.sitedescription {display:none!important;} /*supprimer le sous-titre du foru
   padding-top: 3px;
 }
 .blocliens_message a{
+  color: var(--link);
   font: 12px var(--font);
   font-weight:600;
   text-transform:lowercase;
   text-align: center;
   margin: auto;
 }
+.blocliens_message a:hover{
+  color: var(--link3);
+}
 
 /*PAGE D\'ACCUEIL*/
 .pa {
   width: 800px;
-  height: 297px;
-  margin: auto;
+  height: 303px;
+  margin-bottom: 10px;
   border: var(--border);
   border-radius: var(--border-radius);
   display: inline-block;
-  padding: 5px;
+  padding: 5px 5px 0px 5px;
 }
 .painfo {
   width: 260px;
@@ -831,16 +841,16 @@ span.sitedescription {display:none!important;} /*supprimer le sous-titre du foru
   background-color: var(--greyer);
   box-shadow: var(--box-shadow);
   border: var(--border);
-  color: var(--link3)!important;
   font: var(--font);
-  text-transform: lowercase;
-  font-size: 11px;
+  text-transform: uppercase;
+  font-size: 9px;
   font-weight: 600;
+  letter-spacing: 1.2px;
   border-radius: var(--border-radius3);
 }
 .grid-link:hover {
   background-color: var(--grey);
-  color: var(--link)!important;
+  color: var(--link3)!important;
 }
 .pawanted{width:255px;
   height: 145px;
@@ -957,9 +967,9 @@ span.sitedescription {display:none!important;} /*supprimer le sous-titre du foru
 .tab-pane.active {
   display: block;
 }
-.pacontext{width:265px;
-  height: 115px;
-  margin: -10px auto 0px auto;
+.pacontext{    
+  width: 265px;
+  height: 124px;
 }
 .context {
   width: 253px;
@@ -982,7 +992,7 @@ span.sitedescription {display:none!important;} /*supprimer le sous-titre du foru
   padding: 2px;
 }
 .pavote{width:260px;
-  height: 115px;
+  height: 109px;
 }
 .vote-icons {
   display: flex;
@@ -990,17 +1000,23 @@ span.sitedescription {display:none!important;} /*supprimer le sous-titre du foru
   gap: 8px;  /*ajuster la valeur pour les rapprocher ou les éloigner*/
   margin-bottom: 10px;
 }
-.vote-icon {
+.vote-icon a {
   width: 45px;
   height: 45px;
   border-radius: 50%;
   border: var(--border);
   outline: 3px solid transparent;
-  background-color: var(--grey);
+  background-color: var(--greyer);
+  box-shadow: var(--box-shadow);
   font: var(--font);
   display: flex;
   align-items: center;
   justify-content: center;
+  color: var(--link3);
+}
+.vote-icon a:hover {
+  background-color: var(--grey);
+  color: var(--link);
 }
 #vip {
   width:250px;
@@ -1009,12 +1025,20 @@ span.sitedescription {display:none!important;} /*supprimer le sous-titre du foru
   box-shadow:var(--box-shadow);
   border:var(--border);
   border-radius:var(--border-radius3);
-  font: 13px var(--font)!important;
-  color: var(--link3);
-  text-transform: lowercase;
+  font: 10px var(--font) !important;
+  color: var(--link);
+  letter-spacing: 2px;
+  color: var(--link);
+  text-transform: uppercase;
   text-decoration: none!important;
   text-align: center;
   margin: 10px auto auto 1px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+#vip:hover {
+  background-color:var(--grey);
+  color:var(--link3);
 }
 .bouton_vote {
   width:250px;
@@ -1040,17 +1064,18 @@ span.sitedescription {display:none!important;} /*supprimer le sous-titre du foru
 }
 .bouton_vote a{
   text-decoration:none;
-  color: var(--link3);
+  color: var(--link);
   font: var(--font);
   text-transform: lowercase;
-  font-size: 10px;
+  font-size: 9px;
   font-weight: 600;
+  letter-spacing: 1.2px;
   text-align:center;
   padding-top: 5px;
   line-height: 20px;
 }
 .bouton_vote a:hover {
-  color: var(--link)!important;
+  color: var(--link3)!important;
 }
 
 /*CATÉGORIES*/
@@ -1081,16 +1106,22 @@ span.sitedescription {display:none!important;} /*supprimer le sous-titre du foru
   margin: 3px 0 7px 0;
   padding: 10px 0px;
   width: 800px;
+  display: flex;
+  align-items: center;
 }
 .cate_right {
   width: 670px;
 }
 .cate_right_top {
-  height: 92px;
+  height: 93px;
+}
+.lastpost_topic {
+  justify-content: center;
+  width: 125px;
 }
 .image_cate {
   padding: 5px;
-  margin: 0 3px;
+  margin: 0px 3px 0 5px;
 }
 .image_cate img{
   width: 90px; 
@@ -1103,7 +1134,6 @@ span.sitedescription {display:none!important;} /*supprimer le sous-titre du foru
   background-color: transparent;
 }/*image du forum*/
 .descrip_bloc1 {
-  height: 80px; 
   width: 355px; 
   background-color: var(--greyer);
   box-shadow: var(--box-shadow);
@@ -1113,13 +1143,13 @@ span.sitedescription {display:none!important;} /*supprimer le sous-titre du foru
 } /*le style des descriptions*/
 .forumtitre {
   height: 18px;
-  width:310px;
-  margin: auto;
+  margin: 0px 0px 0px 5px;
   background-color: var(--greyer);
   border-bottom: var(--border);
+  padding-bottom: 2px;
 }/*fond titre de forum*/
 .forumtitre a {
-  color: #62526b;
+  color: #7b5f8b;
   text-shadow: 1px 1px 1px #141414;
   font: 16px var(--font3);
   text-transform: uppercase;
@@ -1176,12 +1206,12 @@ span.sitedescription {display:none!important;} /*supprimer le sous-titre du foru
   border: var(--border);
 }/*mise en place des sous-forums*/
 .lienssousforums {
-  line-height: 18px;
+  line-height: 20px;
   margin-left: 10px;
 }/*position des liens sous forums*/
 .sousforums a{
   top: -3px;
-  color: var(--text);
+  color: #857b8a;
   font: 10px var(--font);
   text-transform: uppercase;
   font-weight: 600;
@@ -1240,35 +1270,39 @@ span.sitedescription {display:none!important;} /*supprimer le sous-titre du foru
   box-shadow: var(--box-shadow);
   border-radius: var(--border-radius2);
   border: var(--border);
+  display: flex;
+  justify-content: space-evenly;
+}
+.lastpost_avatar {
+  display: flex;
+  align-items: center;
 }
 .lastpost_avatar img {
   width: 60px;
   height: 60px;
-  margin-top:18px;
-  margin-left:8px;
-  -webkit-radius: 100%;
   border-radius:100%;
   padding:3px;
   border: var(--border);
-  outline: 3px solid transparent;
   object-fit: cover;
   background-color: transparent;
   filter: grayscale(1);
-  -webkit-filter: grayscale(1);
-  -moz-filter: grayscale(1);
-  -o-filter: grayscale(1);
-  -ms-filter: grayscale(1);
 }
 .forumdesc1 {
   text-align: center;  
-  font-size: 10px; 
-  padding-top: 20px;
-}/*dernier message*/
+  font-size: 10px;
+  width: 125px; 
+}
+.forumdesc1 a {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 10px;
+}
 .cattopic{ 
-  width:130px;
-  margin-top:5px;
+  margin: 5px 4px 0;
+  padding-top: 5px;
   border-top: 0.5px solid var(--beige);
   text-align:center;
+  font-size:10px;
 }/*stats dernier message*/
 .bascat {
   position: relative;
@@ -1359,6 +1393,9 @@ span.sitedescription {display:none!important;} /*supprimer le sous-titre du foru
   margin-top:5px;
 }
 .qeel-tab-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 18px;
   padding: 3px;
   background-color: var(--greyer);
@@ -1366,7 +1403,10 @@ span.sitedescription {display:none!important;} /*supprimer le sous-titre du foru
   border-radius: var(--border-radius3);
   box-shadow: var(--box-shadow);
   color: var(--link3);
-  text-transform: lowercase;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 10px;
+  letter-spacing: 1.5px;
   cursor: pointer;
   text-align: center;
   transition: 0.5s;
@@ -1417,9 +1457,10 @@ span.sitedescription {display:none!important;} /*supprimer le sous-titre du foru
   margin-left:20px;
 }
 .info_dernier strong {
-  font-size: 14px;
-  font-weight:600;
-  text-transform:lowercase;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 .qeelnow{width:243px;
   height: 125px;
@@ -1440,17 +1481,18 @@ span.sitedescription {display:none!important;} /*supprimer le sous-titre du foru
   font: var(--font); 
   color: var(--link3);
   font-weight: 700; 
-  text-transform: lowercase;
   text-decoration: none;
 }
 .blocnow strong{
   font: var(--font); 
   font-weight: 700; 
-  text-transform: lowercase;
   text-decoration: none; 
 }
 #totaluser {
   font-size: 10px!important;
+}
+.gensmall {
+  font-size: var(--default-font-size);
 }
 #lastco{
   overflow: auto;
@@ -1477,14 +1519,12 @@ span.sitedescription {display:none!important;} /*supprimer le sous-titre du foru
 .blocpast strong {
   font: var(--font); 
   font-weight: 700; 
-  text-transform: lowercase;
   text-decoration: none;
 }
 .blocpast a {
   font: var(--font); 
   color: var(--link3);
   font-weight: 700; 
-  text-transform: lowercase;
   text-decoration: none;
 }
 #pastuser{
