@@ -69,14 +69,12 @@ function check_uncheck_all_{topics_list_box.row.header_table.BOX_ID}() {
                     <span class="author">Ce sort a été conjuré par <strong>{topics_list_box.row.TOPIC_AUTHOR}</strong></span>
                   </div>        
         	</div>
-        <div class="TLreplies"><div class="TLreplies2">{topics_list_box.row.REPLIES} réponses</div><br/><div class="TLviews">{topics_list_box.row.VIEWS} vues</div></div>
+        <div class="TLreplies"><div class="TLreplies2">{topics_list_box.row.REPLIES} réponses</div><div class="TLviews">{topics_list_box.row.VIEWS} vues</div></div>
         <div class="TLlastPost">
           <!-- BEGIN avatar -->
-<div style="width: 200px;"></div>
-<span class="TLlastpost-avatar">{topics_list_box.row.topic.avatar.LAST_POST_AVATAR}</span>
+<div class="TLlastpost-avatar">{topics_list_box.row.topic.avatar.LAST_POST_AVATAR}</div>
 <!-- END avatar -->
           <div class="postdetails">{topics_list_box.row.LAST_POST_TIME}<br />{topics_list_box.row.LAST_POST_AUTHOR} <span id="topicimg">{topics_list_box.row.LAST_POST_IMG}</span></div></div>
-        <div class="baslist"></div>
     </div>
   </tr>
   <!-- END topic --><!-- BEGIN no_topics --> 

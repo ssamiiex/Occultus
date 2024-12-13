@@ -1,7 +1,7 @@
 			<!-- BEGIN switch_user_logged_in -->
-<div class="blocliens_message">
-  <a class="gensmall" href="{U_SEARCH_NEW}">{L_SEARCH_NEW}</a> <dsp2>†</dsp2> <a class="gensmall" href="{U_SEARCH_SELF}">{L_SEARCH_SELF}</a> <dsp2>†</dsp2><!-- END switch_user_logged_in --> <a class="gensmall" href="{U_SEARCH_UNANSWERED}">{L_SEARCH_UNANSWERED}</a>
-</div><br/>
+<br><div class="blocliens_message">
+  <a id="lastvisit_posts" class="gensmall" href="{U_SEARCH_NEW}">{L_SEARCH_NEW}</a> <dsp2>†</dsp2> <a id="posts_unanswered" class="gensmall" href="{U_SEARCH_UNANSWERED}">{L_SEARCH_UNANSWERED}</a> <dsp2>†</dsp2> <a id="mark_read" href="{U_MARK_READ}" class="gensmall">{L_MARK_FORUMS_READ}</a><!-- END switch_user_logged_in --> 
+</div>
 <!-- BEGIN catrow -->
   <!-- BEGIN tablehead -->
   <div class="fondcatégoz">
@@ -59,3 +59,9 @@
    <!-- BEGIN tablefoot -->
  </table><img src="{SPACER}" alt="" height="5" width="1" /><!-- END tablefoot --><!-- END catrow -->
 <br/>
+
+<!-- Modifications des textes de lien trop long -->
+<script type="text/javascript">document.getElementById('lastvisit_posts').innerHTML=document.getElementById ('lastvisit_posts').innerHTML.replace(/Voir les nouveaux messages depuis votre dernière visite/,"Nouveaux messages");</script>
+<script type="text/javascript">document.getElementById('posts_unanswered').innerHTML=document.getElementById ('posts_unanswered').innerHTML.replace(/Voir les messages sans réponses/,"Messages sans réponses");</script>
+<script type="text/javascript">document.getElementById('mark_read').innerHTML=document.getElementById ('mark_read').innerHTML.replace(/Marquer tous les forums comme lus/,"Tout marquer comme lu");</script>
+<script type="text/javascript">document.getElementById('cookies').innerHTML=document.getElementById ('cookies').innerHTML.replace(/Supprimer les cookies du forum/,"Supprimer les cookies");</script>

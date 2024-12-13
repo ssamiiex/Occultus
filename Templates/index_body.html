@@ -63,14 +63,9 @@
 
 {CHATBOX_TOP}
 {BOARD_INDEX}
-<table class="blocliens_message" width="100%" border="0" cellspacing="0" cellpadding="0">
-	<tr>
-		<td width="50%" valign="top">
-			<!-- BEGIN switch_user_logged_in --><span class="gensmall"><a href="{U_MARK_READ}" class="gensmall">{L_MARK_FORUMS_READ}</a></span> <dsp2>†</dsp2><!-- END switch_user_logged_in --><!-- BEGIN switch_delete_cookies --> <span class="gensmall"><a href="{switch_delete_cookies.U_DELETE_COOKIES}" class="gensmall" rel="nofollow">{switch_delete_cookies.L_DELETE_COOKIES}</a></span> <dsp2>†</dsp2><!-- END switch_delete_cookies --> <span class="gensmall"><a href="{U_TODAY_ACTIVE}" class="gensmall">{L_TODAY_ACTIVE}</a> <dsp2>†</dsp2><!-- BEGIN switch_on_index --><!-- BEGIN switch_delete_cookies --> <a href="{switch_on_index.switch_delete_cookies.U_DELETE_COOKIES}" class="gensmall" rel="nofollow">{switch_on_index.switch_delete_cookies.L_DELETE_COOKIES}</a><!-- END switch_delete_cookies --><!-- END switch_on_index -->
-			</span>
-		</td>
-	</tr>
-</table><br/>
+<div class="blocliens_message2">
+			<!-- BEGIN switch_user_logged_in --><a id="my_posts" class="gensmall" href="{U_SEARCH_SELF}">{L_SEARCH_SELF}</a> <dsp2>†</dsp2><!-- END switch_user_logged_in --><!-- BEGIN switch_delete_cookies --> <a href="{switch_delete_cookies.U_DELETE_COOKIES}" id="cookies" class="gensmall" rel="nofollow">{switch_delete_cookies.L_DELETE_COOKIES}</a> <dsp2>†</dsp2><!-- END switch_delete_cookies --> <a href="{U_TODAY_ACTIVE}" id="today_active" class="gensmall">{L_TODAY_ACTIVE}</a> <dsp2>†</dsp2><!-- BEGIN switch_on_index --><!-- BEGIN switch_delete_cookies --> <a href="{switch_on_index.switch_delete_cookies.U_DELETE_COOKIES}" id="cookies" class="gensmall" rel="nofollow">{switch_on_index.switch_delete_cookies.L_DELETE_COOKIES}</a><!-- END switch_delete_cookies --><!-- END switch_on_index -->
+</div><br/>
 <!-- BEGIN switch_user_login_form_footer -->
 <form action="{S_LOGIN_ACTION}" method="post" name="form_login">
     <table width="100%" border="0" cellspacing="0" cellpadding="0" class="user_login_form forumline">
