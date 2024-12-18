@@ -207,23 +207,23 @@ showHiddenMessage = function(id)
 						<!-- END switch_vote_active -->
 
 						<div class="postbody">
-                                                  <div class="btnadmin">
+                                                  
                                                   <!-- BEGIN switch_likes_active -->
                                                   <div class="fa_like_div">
                                                 <!-- BEGIN switch_like_list -->
                                                     {postrow.displayed.switch_likes_active.switch_like_list.D_LIKE_LIST}
-						<!-- END switch_like_list -->
+						<!-- END switch_like_list --><div class="btnadmin"><div class="btnadmin-left">
 					<button class="rep-button {postrow.displayed.switch_likes_active.C_VOTE_LIKE}"  data-href="{postrow.displayed.switch_likes_active.U_VOTE_LIKE}" data-href-rm="{postrow.displayed.switch_likes_active.U_VOTE_RM_LIKE}">
 						<span>J'aime</span>{postrow.displayed.switch_likes_active.COUNT_VOTE_LIKE}
 					</button>
                                                   </div>
 						<!-- END switch_likes_active -->
-                                                    <span class="btnquote">{postrow.displayed.QUOTE_IMG}</span> <span class="btnedit">{postrow.displayed.EDIT_IMG}</span> <span class="btndelete">{postrow.displayed.DELETE_IMG}</span> <span class="btnip">{postrow.displayed.IP_IMG}</span> 
-                                                  </div>
-                                                  <script>$('.btnadmin img[src="https://2img.net/i/fa/modernbb/icon_post_quote.png"]').replaceWith("Citer");
-                                                  $('.btnadmin img[src="https://2img.net/i/fa/modernbb/icon_post_edit.png"]').replaceWith("Éditer");
-                                                  $('.btnadmin img[src="https://2img.net/i/fa/modernbb/icon_post_delete.png"]').replaceWith("Supprimer");
-                                                  $('.btnadmin img[src="https://2img.net/i/fa/modernbb/icon_post_info.png"]').replaceWith("IP");</script>
+					<div class="btnadmin-right"><span class="btnquote">{postrow.displayed.QUOTE_IMG}</span> <span class="btnedit">{postrow.displayed.EDIT_IMG}</span> <span class="btndelete">{postrow.displayed.DELETE_IMG}</span> <span class="btnip">{postrow.displayed.IP_IMG}</span> 
+                                                  </div></div>
+                                                  <script>$('.btnadmin img[src="https://2img.net/s/t/20/66/41/i_icon_quote.gif"]').replaceWith("Citer");
+                                                  $('.btnadmin img[src="https://2img.net/s/t/20/66/41/i_icon_edit.gif"]').replaceWith("Éditer");
+                                                  $('.btnadmin img[src="https://2img.net/i/fa/subsilver/icon_delete.gif"]').replaceWith("Supprimer");
+                                                  $('.btnadmin img[src="https://2img.net/i/fa/subsilver/icon_ip.gif"]').replaceWith("IP");</script>
                                                   <br/>
                                                   <div class="content_message">{postrow.displayed.MESSAGE}</div>
 

@@ -17,7 +17,7 @@
   --lighter: #c7bdbb;
   --grey: #121212;
   --greyer: #1c1c1e;
-  --black: #0F0A0E;/*couleur fond du forum*/
+  --black: #0b0b0c;/*couleur fond du forum*/
   --beige: #6c6c6c;/*couleur des border bottom*/
   --background: linear-gradient(180deg, #64528142 10%, #1414147d), url(https://images2.imgbox.com/23/13/enJQZfKT_o.png); /*fond du forum*/
   --background2: #141414; /*fond du cadre de catégories*/
@@ -228,7 +228,7 @@ hr {
 .selectCode { 
   float:right; 
   font: 10px var(--font);
-  color:var(--text);
+  color:var(--link3);
   font-weight: 700;
   text-transform: uppercase;
   cursor:pointer; 
@@ -242,20 +242,18 @@ div.cont_code { clear: right; }
   background-color: var(--black);
   border-radius: var(--border-radius2);
   border: var(--border); 
-  color: var(--text); 
-  font: 12px var(--font);
+  color: var(--beige); 
+  font: var(--default-font-size) var(--font);
   line-height:18px;
-  letter-spacing: 1px;
 }/*Intérieur du contenu de CODE*/
 .spoiler {
   border: none;
   background-color: transparent;
 }/*Bloc qui contient le titre et le contenu de SPOILER*/
 .spoiler > dt {
-  color: var(--link3);
+  color: var(--link);
   font: var(--msg-font-size) var(--font); var(--font);
   font-weight: 600;
-  padding-left:3px;
 }/*Ligne du titre de SPOILER*/
 .spoiler_closed {
   background-color: transparent!important;
@@ -264,7 +262,7 @@ div.cont_code { clear: right; }
   border: var(--border);
   background-color: var(--black);
   border-radius: var(--border-radius2);
-  color: var(--text);
+  color: var(--beige);
   font: var(--msg-font-size) var(--font);
   line-height: 18px;
   padding:3px;
@@ -274,6 +272,7 @@ div.cont_code { clear: right; }
 }/*Pour éliminer un espace pas rapport sous le spoiler*/
 .quote {
   border: var(--border)!important;
+  border-radius: var(--border-radius2);
   background-color: var(--black)!important;
   font: var(--msg-font-size) var(--font);
   color:var(--beige);
@@ -282,11 +281,15 @@ div.cont_code { clear: right; }
 }/*Contenu de QUOTE*/
 .codebox.hidecode { 
   border: var(--border)!important;
-  background-color: var(--black)!important;
   font: var(--msg-font-size) var(--font);
   line-height: 18px;
   padding: 5px;
-}/*Contenu hide*/
+}
+.codebox dd {
+  background-color: var(--greyer);
+  color: var(--beige);
+  padding: 5px;
+}
   
 /* Scrollbar */
 ::-webkit-scrollbar {
@@ -1480,6 +1483,9 @@ span.sitedescription {display:none!important;} /*supprimer le sous-titre du foru
 .gensmall {
   font-size: var(--default-font-size);
 }
+.genmed {
+  color: var(--link);
+}
 #lastco{
   overflow: auto;
   text-align: justify;
@@ -1621,9 +1627,10 @@ background-color : transparent;
 #topicType { 
   font: var(--font);
   color: var(--text);
-  font-size: 12px;
+  font-size: var(--caps-font-size);
+  letter-spacing: 0.5px;
   font-weight: 600;
-  text-transform: lowercase;
+  text-transform: uppercase;
 }
 .TLtitle a{ 
   text-align:justify;
@@ -1890,18 +1897,18 @@ table.fondsujet {
   font: 11px var(--font);
 }/*cadre du fond de sujet*/
 .date {
-  width: 780px;
-  margin: 1% 1% 2%;
+  margin: 5px 5px 12px;
   background-color:var(--greyer);
   box-shadow:var(--box-shadow);
   border:var(--border);
   border-radius:var(--border-radius3);
-  font: 10px var(--font)!important;
-  color: var(--link3);
-  text-transform: lowercase;
+  text-transform: uppercase;
+  font: 9px var(--font);
+  font-weight: 600;
+  color: var(--beige);
   text-decoration: none!important;
   text-align: center;
-  padding: 2px;
+  padding: 5px;
 }
 .positionprofil {
   display: block;
@@ -2036,10 +2043,15 @@ table.fondsujet {
   border-radius: 3px;
 }
 .btnadmin {
-  margin-top:-15px;
+  display: flex;
+  justify-content: space-between;
+}
+.btnadmin-right {
+  margin-top: -2px;
 }
 .postbody {
   padding:5px;
+  margin-top: -15px;
 }
 .postbody .fa_like_div {
     margin-top: 0px !important;
@@ -2056,93 +2068,31 @@ table.fondsujet {
   text-transform: lowercase;
   text-decoration:none;
 }
-.fa_like {
+.fa_like, .fa_liked, .btnadmin span a {
   background-color: var(--greyer);
   box-shadow: var(--box-shadow);
   border: var(--border);
   font: var(--font);
-  color: var(--link3);
-  font-size: 12px;
+  color: var(--link);
+  font-size: var(--caps-font-size);
+  letter-spacing: 0.5px;
   font-weight: 600;
-  text-transform: lowercase;
+  text-transform: uppercase;
   border-radius: var(--border-radius3);
-  padding-top:1px;
-  padding-left:3px;
-  padding-right:3px;
+  padding: 0px 8px;
   cursor: pointer;
   margin-top:-1px;
+  transition: 0.5s;
 }
-.fa_liked {
-  background-color: var(--greyer);
-  box-shadow: var(--box-shadow);
-  border: var(--border);
-  font: var(--font);
-  color: var(--link3);
-  font-size: 12px;
-  font-weight: 600;
-  text-transform: lowercase;
-  border-radius: var(--border-radius3);
-  padding-left:3px;
-  padding-right:3px;
-  cursor: pointer;
-  margin-top:-1px;
+.fa_like:hover, .fa_liked:hover, .btnadmin span a:hover {
+  background-color: var(--black);
 }
-.btnquote a{
-  font: var(--font);
-  font-size: 12px;
-  font-weight: 600;
-  text-transform: lowercase;
-  color: var(--link3)!important;
-  margin-left:2px;
-  cursor: pointer;
-  transition: 0.5s;
-  -webkit-transition: 0.5s;
-}/*bouton répondre*/
-.btnquote a:hover{
-  color: var(--link)!important;
-}/*couleur du lien survol*/
-.btnedit a{
-  font: var(--font);
-  font-size: 12px;
-  font-weight: 600;
-  text-transform: lowercase;
-  color: var(--link3)!important;
-  margin-left:2px;
-  cursor: pointer;
-  transition: 0.5s;
-  -webkit-transition: 0.5s;
-}/*bouton répondre*/
-.btnedit a:hover{
-  color: var(--link)!important;
-}/*couleur du lien survol*/
-.btndelete a{
-  font: var(--font);
-  font-size: 12px;
-  font-weight: 600;
-  text-transform: lowercase;
-  color: var(--link3)!important;
-  margin-left:2px;
-  cursor: pointer;
-  transition: 0.5s;
-  -webkit-transition: 0.5s;
-}/*bouton répondre*/
-.btndelete a:hover{
-  color: var(--link)!important;
-}/*couleur du lien survol*/
-.btnip a{
-  font: var(--font);
-  font-size: 12px;
-  font-weight: 600;
-  text-transform: lowercase;
-  color: var(--link3)!important;
-  margin-left:2px;
-  cursor: pointer;
-  transition: 0.5s;
-  -webkit-transition: 0.5s;
-}/*bouton répondre*/
-.btnip a:hover{
-  color: var(--link)!important;
-}/*couleur du lien survol*/
+.btnadmin-right a {
+  padding: 2px 8px!important;
+}
+.rep-nb {
+  border-left: 1px solid var(--beige);
+} 
 .content_message {
   text-align: justify;
   font: var(--msg-font-size) var(--font);
