@@ -199,8 +199,20 @@ table.user_login_form.forumline {
   border: var(--border);
   border-radius: var(--border-radius);
 }/*encadré du menu de connexion*/
-td.row1, td.row3.over:hover {
+td.row1, td.row3.over:hover,
+td.row2, td.row1.over:hover,
+td.cat, td.catHead, td.catSides, td.catLeft, td.catRight, td.catBottom,
+td.row3Right, td.spaceRow {
   background-color: var(--grey);
+}
+th, .cattitle {
+  color: var(--text);
+}
+.forumline {
+  background-color: var(--greyer);
+}
+hr {
+  border: solid var(--greyer) 0;
 }
 .fb_or {background-color: var(--grey) !important;}
 ::-moz-selection{
@@ -1141,10 +1153,10 @@ span.sitedescription {display:none!important;} /*supprimer le sous-titre du foru
 .forumtitre a {
   color: #7b5f8b;
   text-shadow: 1px 1px 1px #141414;
-  font: 15px var(--font3);
+  font: 15px var(--font);
   text-transform: uppercase;
   font-weight: 700;
-  letter-spacing: 0.5px;
+  letter-spacing: 1px;
   -webkit-transition-duration:0.5s;
   -webkit-transition-timing-function:ease-in;
 /* Bientôt supporté par Firefox */
@@ -2137,7 +2149,6 @@ table.fondsujet {
   line-height: 18px;
   padding:10px;
   margin-top:-15px;
-  display: inline-block;
 }
 .signature {
   max-width:500px;
@@ -2148,6 +2159,9 @@ form#quick_reply {
 }
 #sceditor_smilies {
   background-color: var(--grey)!important;
+}
+#sceditor_smilies table {
+  background-color: var(--greyer)!important;
 }
 .sceditor-group {
   background:none!important;
