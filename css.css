@@ -1927,7 +1927,7 @@ table.fondsujet {
   flex-direction: column;
   align-items: center;
 }
-.profilpseudo, .profilrang, .as-above, .so-below {
+.profilpseudo, .profilrang, .as-above, .so-below, .profilonline {
   width:210px;
   background: var(--grey);
   border-radius: var(--border-radius3);
@@ -2018,34 +2018,34 @@ table.fondsujet {
   background: var(--grey);
   border-radius: var(--border-radius3);
   width: 190px;
-  height: 330px;
+  height: 320px;
   overflow:auto;
   box-shadow: var(--box-shadow);
   border: var(--border);
   text-align: justify;
   color: var(--beige);
-  margin: 5px auto;
   padding:10px;
 }
 .profilonline {
-  text-align:center;
-  color:var(--text);
-  font: 12px var(--font);
+  text-align: center;
+  font: 10px var(--font);
   text-transform: lowercase;
-  font-weight:600;
+  font-weight: 600;
+  letter-spacing: 2px;
+  margin-top: 8px;
 }
 .profilcontent .label,
 .profilcontent2 .label{
   font: var(--font);
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 600;
   text-transform: lowercase;
   color: var(--link3);
 }
-/* .profilcontent div,
-.profilcontent2 .div {
-  border-bottom: 0.5px #2f2e2a solid;
-} */
+.profilcontent hr,
+.profilcontent2 hr {
+  border-bottom: 0.5px #383838 solid;
+}
 .profilcontent div img,
 .profilcontent2 div img  {
   box-shadow: 0px 0px 6px #000000;
@@ -2062,6 +2062,7 @@ table.fondsujet {
 .postbody {
   padding:5px;
   margin-top: -15px;
+  color: var(--text);
 }
 .postbody .fa_like_div {
     margin-top: 0px !important;

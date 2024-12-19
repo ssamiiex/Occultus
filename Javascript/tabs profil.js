@@ -12,8 +12,6 @@ var defaultColor = {
       $('body')
         .on('click', '.as-above', function(){
 
-        console.log("click AS ABOVE");
-    
           var above = $(this).nextAll(".profilcontent:first");
           var below = $(this).nextAll(".profilcontent2:first");
 
@@ -56,9 +54,6 @@ var defaultColor = {
     
             var label = $(this).find('.gen > .label');
             var field = label.html() ;
-            
-            console.log("Field");
-            console.log(field);
 
             var found = false;
             switch (field) {
@@ -72,11 +67,12 @@ var defaultColor = {
                 case "Pseudo : ":
                 case "Multicomptes : ":
                 case "Vos habitudes RPG : ":
+                case "Points : ":
                     found = true;
                     break;
                 default: 
                     break;
-            } 
+            }
     
             if (found) {
                 $(this).parents($parent).find('.profilcontent2').append(this);
