@@ -1,11 +1,12 @@
 // Code by NYXEIA
 
-var selectedColor = {"color" : "var(--link)"};
+var selectedColor = {
+    "text-transform" : "uppercase"
+};
     
-    var defaultColor = {
-      "color" : "var(--beige)"};
-    
-    var labelColor = selectedColor;
+var defaultColor = {
+    "text-transform" : "lowercase"
+};
     
     $( function(){
       $('body')
@@ -15,12 +16,8 @@ var selectedColor = {"color" : "var(--link)"};
     
           var above = $(this).nextAll(".profilcontent:first");
           var below = $(this).nextAll(".profilcontent2:first");
-        
-          console.log(below);
 
           if (below.is(":visible")) {
-
-            console.log("show AS ABOVE");
     
             below.hide();
             above.show();
@@ -34,15 +31,11 @@ var selectedColor = {"color" : "var(--link)"};
     $( function(){
       $('body')
         .on('click', '.so-below', function(){
-
-        console.log("click SO BELOW");
     
         var above = $(this).nextAll(".profilcontent:first");
         var below = $(this).nextAll(".profilcontent2:first");
     
           if (above.is(":visible")) {
-
-            console.log("show SO BELOW");
     
             above.hide();
             below.show();
@@ -55,54 +48,30 @@ var selectedColor = {"color" : "var(--link)"};
     });
     
     
-    var $path = ".post_profile .post_userinfo .user_field";
-    var $parent = ".post_profile";
+    var $path = ".cadreprofil .profiltabs .profilcontent div";
+    var $parent = ".profiltabs";
     
     jQuery(function () {
         $( $path ).each(function( index ) {
     
-            var label = $(this).find('.label > span:first-child');
+            var label = $(this).find('.gen > .label');
             var field = label.html() ;
-    
+            
+            console.log("Field");
+            console.log(field);
+
             var found = false;
             switch (field) {
-                case "Alias":
-                case "Genre":
-                case "Age":
-                case "Zone libre":
-                case "Dollars":
-                case "Statut":
-                case "Occupation":
-                case "Habitation":
-                    found = true;
-                    break;
-                default: 
-                    break;
-            } 
-    
-            if (found){
-                $(this).parents($parent).find('.p-box-corps').append(this);
-                label.css(labelColor);
-            }
-     
-        });
-    
-    });
-    
-    jQuery(function () {
-        $( $path ).each(function( index ) {
-    
-            var label = $(this).find('.label > span:first-child');
-            var field = label.html() ;
-    
-            var found = false;
-            switch (field) {
-                case "Déchirures":
-                case "Altérations":
-                case "Limites":
-                case "Stigmates":
-                case "Inventaire":
-                case "Mémo RP":
+                case "Zone libre : ":
+                case "Avatar : ":
+                case "Crédits : ":
+                case "Messages : ":
+                case "Date d'inscription : ":
+                case "Triggers : ":
+                case "Warnings : ":
+                case "Pseudo : ":
+                case "Multicomptes : ":
+                case "Vos habitudes RPG : ":
                     found = true;
                     break;
                 default: 
@@ -110,8 +79,7 @@ var selectedColor = {"color" : "var(--link)"};
             } 
     
             if (found) {
-                $(this).parents($parent).find('.p-box-esprit').append(this);
-                label.css(labelColor);
+                $(this).parents($parent).find('.profilcontent2').append(this);
             }
      
         });

@@ -2001,12 +2001,18 @@ table.fondsujet {
 }
 .as-above, .so-below {
   display: inline-flex;
+  justify-content: center;
   margin-bottom: 8px;
-  width:100px!important;
+  width:102px!important;
   font-family: var(--font2);
   text-transform: lowercase;
   font-size: 15px;
   cursor: pointer;
+  color: var(--beige);
+}
+.as-above {
+  text-transform: uppercase;
+  margin-right: 5px;
 }
 .profilcontent, .profilcontent2 {
   background: var(--grey);
@@ -2036,10 +2042,10 @@ table.fondsujet {
   text-transform: lowercase;
   color: var(--link3);
 }
-.profilcontent div,
+/* .profilcontent div,
 .profilcontent2 .div {
   border-bottom: 0.5px #2f2e2a solid;
-}
+} */
 .profilcontent div img,
 .profilcontent2 div img  {
   box-shadow: 0px 0px 6px #000000;
