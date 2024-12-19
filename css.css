@@ -36,6 +36,7 @@
   --gap-size: 12px;
   --ease: cubic-bezier(0.4, 0.0, 0.2, 1);
   --ease-bounce: cubic-bezier(0.43, 0.09, 0.38, 2.56);
+  --box-shadow: 1px 3px 8px 0px #0e0e0ea8;
 }
 body {
   background: var(--background);
@@ -679,8 +680,8 @@ a#fa_notifications {position:fixed;left:90%;top:1px;} /*position des notificatio
 .mainmenu[href="/groups"]{display:none;} /*ne pas afficher les groupes*/
 .mainmenu[href="/calendar"]{display:none;} /*ne pas afficher le calendrier*/
 .mainmenu[href="/images"]{display:none;} /*ne pas afficher les derniÃ¨res images*/
-.mainmenu[href="/search"]{margin-left:-23px;} /*position du rechercher*/
-.mainmenu[href="/profile?mode=editprofile"]{margin-left:-10px;} /*position du profil*/
+.mainmenu[href="/search"]{margin-left:-17px;} /*position du rechercher*/
+.mainmenu[href="/profile?mode=editprofile"]{margin-left:-5px;} /*position du profil*/
 .mainmenu[href="/register"]{margin-left:-9px;color:var(--link3);} /*position du s'enregistrer*/
 .player {width: 300px;
   height: 30px;
@@ -1912,63 +1913,66 @@ table.fondsujet {
 }
 .positionprofil {
   display: block;
-  width: 220px;
+  width: 235px;
   text-align: center;
-  padding-left:10px;
+  padding-left:5px;
   margin-top:-5px;
 }
 .cadreprofil {
-  background-color: var(--greyer);
-  box-shadow: var(--box-shadow);
-  border: var(--border);
+  background: var(--background);
   border-radius: var(--border-radius2);
-  padding-top: 5px;
-  padding-left: 2px;
-  padding-bottom: 5px;
+  padding: 12px 0;
+  width: 234px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.profilpseudo {
+.profilpseudo, .profilrang {
   width:210px;
-  height:35px;
   background: var(--grey);
   border-radius: var(--border-radius3);
-  padding: 3px 1px 1px 1px;
   color: var(--beige);
   text-align:center;
-  margin-left:1px;
+  box-shadow: var(--box-shadow);
+  border: var(--border);
+}
+.profilpseudo {
+  margin-bottom: 8px;
+  height:35px;
+}
+.profilrang {
+  height:18px;
 }
 .profilpseudo strong{
   text-transform: lowercase;
   font: 14px var(--font);
   font-weight:bold;
 }
-.profilrang {
-  margin: auto;
-  width: 150px;
-  border-top: var(--border);
-  text-transform: lowercase;
-  font: 11px var(--font);
-}
 .profilavatar {
   background: var(--grey);
   border-radius: var(--border-radius3);
-  margin-top:5px;
-  margin-left:2px;
+  margin:8px 0;
   width: 210px;
   height: 330px;
   position: relative;
   display:block;
+  box-shadow: var(--box-shadow);
+  border: var(--border);
 }
 .profilavatar img {
   margin-top:5px;
   opacity: 1;
+  border-radius: var(--border-radius3);
   transition: opacity 0.3s ease;
 }
 .btncontact {
-  width: 190px; 
-  padding: 10px;
+  width: 190px;
+  padding:10px;
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   justify-content: space-around;
+  row-gap: 7px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -1976,6 +1980,7 @@ table.fondsujet {
   opacity: 0;
   transition: opacity 0.3s ease;
 }
+.btncontact a {height:18px; line-height: 18px !important;}
 .profilavatar:hover .btncontact {
   opacity: 1;
   z-index: 2;
@@ -1983,34 +1988,14 @@ table.fondsujet {
 .profilavatar:hover img {
   opacity: 0.5;
 }
-.btncontact a {
-  opacity: 1 !important;
-  margin: 5px;
-  background-color: var(--grey);
-  font: var(--font);
-  font-size: 12px;
-  font-weight: 600;
-  text-transform: lowercase;
-  border-radius: var(--border-radius3);
-  padding:3px;
-  cursor: pointer;
-  transition: 0.5s;
-  -webkit-transition: 0.5s;
-}
-.btncontact a:hover {
-  transform: scale(1.1);
-  background-color: var(--greyer);
-  box-shadow: var(--box-shadow);
-  color: var(--link3);
-}
 .profilcontent {
   background: var(--grey);
-  border-radius: var(--border-radius2);
+  border-radius: var(--border-radius3);
   width: 210px;
   height: 330px;
   overflow:auto;
-  margin-top:5px;
-  margin-left:2px;
+  box-shadow: var(--box-shadow);
+  border: var(--border);
 }
 .profilinside {
   width:200px;
@@ -2068,7 +2053,8 @@ table.fondsujet {
   text-transform: lowercase;
   text-decoration:none;
 }
-.fa_like, .fa_liked, .btnadmin span a {
+.fa_like, .fa_liked, .btnadmin span a,
+.btncontact a {
   background-color: var(--greyer);
   box-shadow: var(--box-shadow);
   border: var(--border);
@@ -2084,7 +2070,8 @@ table.fondsujet {
   margin-top:-1px;
   transition: 0.5s;
 }
-.fa_like:hover, .fa_liked:hover, .btnadmin span a:hover {
+.fa_like:hover, .fa_liked:hover, .btnadmin span a:hover,
+.btncontact a:hover {
   background-color: var(--black);
 }
 .btnadmin-right a {
