@@ -162,16 +162,21 @@ showHiddenMessage = function(id)
   $('.btncontact img[src="https://2img.net/i/fa/modernbb/icon_contact_pinterest.png"]').replaceWith("Moodboard");
   $('.btncontact img[src="https://2img.net/i/fa/modernbb/icon_contact_skype.png"]').replaceWith("Autre");
   });
-  </script>
-                  		<div class="profilcontent"><div class="profilinside">
-                                  <div class="profilonline">{postrow.displayed.ONLINE_IMG}</div>
-                                  <script>$('.profilonline img[src="https://2img.net/i/fa/modernbb/icon_user_online_fr.png"]').replaceWith("En ligne");</script>
+  </script>				
+						<div class="profiltabs">
+						<div class="as-above">AS ABOVE</div>
+						<div class="so-below">SO BELOW</div>
+                  		<div class="profilcontent" style="display: block;">
                           		<!-- BEGIN profile_field -->
                                   <div><span class="gen">{postrow.displayed.profile_field.LABEL}</span> {postrow.displayed.profile_field.CONTENT}{postrow.displayed.profile_field.SEPARATOR}</div>
 					<!-- END profile_field -->
 					{postrow.displayed.POSTER_RPG}
-                  		</div></div>
-                          </div>
+                  		</div>
+						<div class="profilcontent2" style="display: none;"></div>
+						</div>
+					<div class="profilonline">{postrow.displayed.ONLINE_IMG}</div>
+					<script>$('.profilonline img[src="https://2img.net/s/t/20/66/41/i_icon_online.gif"]').replaceWith("En ligne");</script>
+			</div>
 		</td>
           
           

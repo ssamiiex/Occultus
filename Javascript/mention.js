@@ -6,14 +6,12 @@ $(function() {
        my_setcookie('fa_mention',''); 
     } if (!/\/t\d+/.test(window.location.pathname)) return;
   
-    for (var a = $(['.name strong a', '.postprofile dt strong a', '.username a', '.postprofile dt a ~ a'][version]), b, i = 0, j = a.length, t = document.getElementById('text_editor_textarea'); i<j; i++) {
+    for (var a = $(['.btnquote', '.postprofile dt strong a', '.username a', '.postprofile dt a ~ a'][version]), b, d = ['.name strong a', '.author a', '.username a', '.author a', '.post_pseudo a'][version], i = 0, j = a.length, t = document.getElementById('text_editor_textarea'); i<j; i++) {
        b = document.createElement('A');
-       b.title = 'Mentionner ' + $(a[i]).text();
+       b.title = 'Mentionner ' + $(a[i]).closest('.post').find(d + ':not(.fa-mention)').text();
        b.style.marginRight = '3px';
        b.style.fontFamily = 'Open Sans';
-       b.style.fontSize = '13px';
        b.style.fontWeight = 'light';
-       b.style.color = '#917051';
        b.className = 'fa-mention';
        b.innerHTML = '@';
        b.href = '#';
