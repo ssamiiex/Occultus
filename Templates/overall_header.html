@@ -370,83 +370,6 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 <table cellspacing="0" cellpadding="0" border="0" align="{MENU_POSITION}" id="navigation">
 <tr><td class="navigation" align="{MENU_POSITION}"{MENU_NOWRAP}>{GENERATED_NAV_BAR}</td></tr>
-  <tr><td>    <div class="player">
-        <div class="controls">
-            <button id="prev">⏮</button>
-            <button id="play-pause">▶</button>
-            <button id="next">⏭</button>
-        </div>
-        <div class="song-title">Loading...</div>
-    </div>
-
-    <div id="youtube-player" style="display: none;"></div>
-
-    <script src="https://www.youtube.com/iframe_api"></script>
-    <script>
-        let player;
-        let currentVideoIndex = 0;
-        const videos = [
-            { id: 'O3UuqCN1sQs', title: 'The Devil Within - Digital Daggers' },
-      { id: 'H3Rzhf1yrNc', title: 'Redeemer - Marilyn Manson' },
-      { id: 'SM8PU-mTSaI', title: 'Seven Devils - Florence + The Machine' },
-      { id: 'oMe4kVNKvNk', title: 'Passive - A Perfect Circle' }
-        ];
-
-        function onYouTubeIframeAPIReady() {
-            player = new YT.Player('youtube-player', {
-                height: '0',
-                width: '0',
-                videoId: videos[currentVideoIndex].id,
-                events: {
-                    'onReady': onPlayerReady,
-                    'onStateChange': onPlayerStateChange
-                }
-            });
-        }
-
-        function onPlayerReady(event) {
-            updateSongTitle();
-        }
-
-        function onPlayerStateChange(event) {
-            if (event.data == YT.PlayerState.ENDED) {
-                nextVideo();
-            }
-            updatePlayPauseButton();
-        }
-
-        function updatePlayPauseButton() {
-            const playPauseBtn = document.getElementById('play-pause');
-            playPauseBtn.textContent = player.getPlayerState() === YT.PlayerState.PLAYING ? '⏸' : '▶';
-        }
-
-        function updateSongTitle() {
-            const songTitleElement = document.querySelector('.song-title');
-            songTitleElement.textContent = videos[currentVideoIndex].title;
-        }
-
-        document.getElementById('play-pause').addEventListener('click', () => {
-            if (player.getPlayerState() === YT.PlayerState.PLAYING) {
-                player.pauseVideo();
-            } else {
-                player.playVideo();
-            }
-        });
-
-        document.getElementById('prev').addEventListener('click', () => {
-            currentVideoIndex = (currentVideoIndex - 1 + videos.length) % videos.length;
-            player.loadVideoById(videos[currentVideoIndex].id);
-            updateSongTitle();
-        });
-
-        document.getElementById('next').addEventListener('click', nextVideo);
-
-        function nextVideo() {
-            currentVideoIndex = (currentVideoIndex + 1) % videos.length;
-            player.loadVideoById(videos[currentVideoIndex].id);
-            updateSongTitle();
-        }
-    </script></td></tr>
 </table>
 <!-- BARRE DE NAVIGATION -->
                   
@@ -579,55 +502,127 @@ $(document).ready(function() {
     <div class="carousel-slides">
         <div class="carousel-slide">
             <a href="https://occultus.forumactif.com/t18-f-leah-dragomir-raising-hell" target="_blank">
-<img src="https://i.ibb.co/dLrV4Gs/leahpv.png" alt="Slide 1"/>
+<img src="https://i.ibb.co/vv8D7mh/carteandrei.png" alt="Slide 1"/>
             </a>
         </div>
         <div class="carousel-slide">
             <a href="https://occultus.forumactif.com/t22-m-malcolm-hargrave-fragile-sword" target="_blank">
-<img src="https://i.ibb.co/HVNShyd/malcompv.png" alt="Slide 2"/>
+<img src="https://i.ibb.co/y61nWZd/carteastrea.png" alt="Slide 2"/>
             </a>
         </div>
         <div class="carousel-slide">
             <a href="https://occultus.forumactif.com/t21-m-vasile-constantin-my-name-is-vasile-constantin-asshole" target="_blank">
-<img src="https://i.ibb.co/crzKq21/vasilepv.png" alt="Slide 3"/>
+<img src="https://i.ibb.co/txg1HC0/carteclub.png" alt="Slide 3"/>
             </a>
         </div>
 <div class="carousel-slide">
             <a href="https://occultus.forumactif.com/t27-m-maximilien-lange-monster-under-the-bed" target="_blank">
-<img src="https://i.ibb.co/wYvy0MG/maxpv.png" alt="Slide 4"/>
+<img src="https://i.ibb.co/GT8tFd9/cartedarius.png" alt="Slide 4"/>
             </a>
         </div>
 <div class="carousel-slide">
             <a href="https://occultus.forumactif.com/t28-m-darius-savin-babysitting-ain-t-fun" target="_blank">
-<img src="https://i.ibb.co/rxPYqc4/dariuspv.png" alt="Slide 5"/>
+<img src="https://i.ibb.co/9H0pYPj/cartekrisztian.png" alt="Slide 5"/>
             </a>
         </div>
 <div class="carousel-slide">
             <a href="https://occultus.forumactif.com/t26-f-m-nb-famille-zalan-mors-vincit-omnia" target="_blank">
-<img src="https://i.ibb.co/R3ytgHn/zalanpv.png" alt="Slide 6"/>
+<img src="https://i.ibb.co/sHGr0QW/cartemax.png" alt="Slide 6"/>
             </a>
         </div>
 <div class="carousel-slide">
             <a href="https://occultus.forumactif.com/t29-f-m-nb-buddhist-exotic-cigars-club-cercle-du-lotus-rouge" target="_blank">
-<img src="https://i.ibb.co/9Gh9LcY/lotuspv.png" alt="Slide 7"/>
+<img src="https://i.ibb.co/mXSZTvM/cartenox.png" alt="Slide 7"/>
             </a>
         </div>
 <div class="carousel-slide">
             <a href="https://occultus.forumactif.com/t67-f-m-nb-nox-arcana-boutique-d-artefacts-mystiques" target="_blank">
-<img src="https://i.ibb.co/Npx22Dc/noxpv.png" alt="Slide 8"/>
-            </a>
-        </div>
-<div class="carousel-slide">
-            <a href="https://occultus.forumactif.com/t76-m-krisztian-beligan-pasiune-distructiva#253L" target="_blank">
-<img src="https://i.ibb.co/JstJ1gn/krisztianpv.png" alt="Slide 9"/>
+<img src="https://i.ibb.co/r2ppJL6/cartezalan.png" alt="Slide 8"/>
             </a>
         </div>
     </div>
     <div class="carousel-arrow carousel-prev">❮</div>
     <div class="carousel-arrow carousel-next">❯</div>
 </div>
-</div></td>
-  </tr>
+<div class="player">
+        <div class="controls">
+            <button id="prev">⏮</button>
+            <button id="play-pause">▶</button>
+            <button id="next">⏭</button>
+        </div>
+        <div class="song-title">Loading...</div>
+    </div>
+
+    <div id="youtube-player" style="display: none;"></div>
+
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script>
+        let player;
+        let currentVideoIndex = 0;
+        const videos = [
+            { id: 'O3UuqCN1sQs', title: 'The Devil Within - Digital Daggers' },
+      { id: 'H3Rzhf1yrNc', title: 'Redeemer - Marilyn Manson' },
+      { id: 'SM8PU-mTSaI', title: 'Seven Devils - Florence + The Machine' },
+      { id: 'oMe4kVNKvNk', title: 'Passive - A Perfect Circle' }
+        ];
+
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('youtube-player', {
+                height: '0',
+                width: '0',
+                videoId: videos[currentVideoIndex].id,
+                events: {
+                    'onReady': onPlayerReady,
+                    'onStateChange': onPlayerStateChange
+                }
+            });
+        }
+
+        function onPlayerReady(event) {
+            updateSongTitle();
+        }
+
+        function onPlayerStateChange(event) {
+            if (event.data == YT.PlayerState.ENDED) {
+                nextVideo();
+            }
+            updatePlayPauseButton();
+        }
+
+        function updatePlayPauseButton() {
+            const playPauseBtn = document.getElementById('play-pause');
+            playPauseBtn.textContent = player.getPlayerState() === YT.PlayerState.PLAYING ? '⏸' : '▶';
+        }
+
+        function updateSongTitle() {
+            const songTitleElement = document.querySelector('.song-title');
+            songTitleElement.textContent = videos[currentVideoIndex].title;
+        }
+
+        document.getElementById('play-pause').addEventListener('click', () => {
+            if (player.getPlayerState() === YT.PlayerState.PLAYING) {
+                player.pauseVideo();
+            } else {
+                player.playVideo();
+            }
+        });
+
+        document.getElementById('prev').addEventListener('click', () => {
+            currentVideoIndex = (currentVideoIndex - 1 + videos.length) % videos.length;
+            player.loadVideoById(videos[currentVideoIndex].id);
+            updateSongTitle();
+        });
+
+        document.getElementById('next').addEventListener('click', nextVideo);
+
+        function nextVideo() {
+            currentVideoIndex = (currentVideoIndex + 1) % videos.length;
+            player.loadVideoById(videos[currentVideoIndex].id);
+            updateSongTitle();
+        }
+    </script>
+</div>
+</td></tr>
   <tr>
     <td><div class="pastaff"><div id="staff-tabs" style="display:none;">
   <div class="tab-container">
